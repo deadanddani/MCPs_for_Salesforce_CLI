@@ -24,6 +24,7 @@
   "homepage": "https://github.com/deadanddani/MCP#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.1",
+    "@salesforce/cli": "^2.84.6",
     "zod": "^3.24.3"
   },
   "devDependencies": {
