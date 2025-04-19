@@ -5,4 +5,5 @@ export type Tool = {
   description: string;
   inputSchema: any;
   execute: any;
+  annotations: any;
 };

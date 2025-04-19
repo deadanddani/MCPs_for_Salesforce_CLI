@@ -1,10 +1,10 @@
-import os from 'os';
+import os from "os";
 import { execSync } from "child_process";
 
 const defaultPort = 1717; // Default port for SF commands
 
-export function killExistingProcesses {
-  if (os.platform() === 'win32') {
+export function killExistingProcesses() {
+  if (os.platform() === "win32") {
     // Windows
     const cmd = `for /f "tokens=5" %a in ('netstat -aon ^| find ":${defaultPort}" ^| find "LISTENING"') do taskkill /PID %a /F`;
     execSync(cmd);

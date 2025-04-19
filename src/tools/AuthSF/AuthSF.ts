@@ -2,13 +2,14 @@ import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { execSync } from "child_process";
 import { checkCliInstallation } from "../../helpers/CliChecker.js";
+import { killExistingProcesses } from "../../helpers/killExistingProcesses.js";
 
 export const authSF: Tool = {
   name: "Auth_Salesforce_Instance",
   description:
     "Tool to authenticate to Salesforce Instance so the rest of the tools can be executed",
   inputSchema: {
-    Alias: z
+    alias: z
       .string()
       .describe(
         "Alias to be used to execute the following task this can be any name"
@@ -20,19 +21,26 @@ export const authSF: Tool = {
       ),
   },
   execute: authSFLogic,
+  annotations: {
+    title: "Authorize Salesforce Instance",
+    readOnlyHint: true,
+    destructiveHint: false,
+    idempotentHint: false,
+    openWorldHint: false,
+  },
 };
 
 function authSFLogic({
-  Alias,
+  alias,
   instanceUrl,
 }: {
-  Alias: string;
+  alias: string;
   instanceUrl: string;
 }) {
   let message;
   try {
-    let message2 = Auth(Alias, instanceUrl);
-    message = `Authenticated to Salesforce Instance with alias ${Alias} and instance URL ${instanceUrl} and message ${message2}`;
+    let message2 = Auth(alias, instanceUrl);
+    message = `Authenticated to Salesforce Instance with alias ${alias} and instance URL ${instanceUrl} and message ${message2}`;
   } catch (error) {
     message = `Authenticated to Salesforce Failed with the error: ${error}`;
   }
@@ -41,16 +49,17 @@ function authSFLogic({
     content: [
       {
         type: "text",
-        text: `Authenticated to Salesforce Instance with alias ${Alias} and instance URL ${instanceUrl}`,
+        text: message,
       },
     ],
   };
 }
 
-function Auth(Alias: string, instanceUrl: string) {
+function Auth(alias: string, instanceUrl: string) {
+  killExistingProcesses();
   checkCliInstallation();
 
   return execSync(
-    `sf org login web --alias ${Alias} --set-default --instance-url ${instanceUrl}`
+    `sf org login web --alias ${alias} --set-default --instance-url ${instanceUrl}`
   );
 }
