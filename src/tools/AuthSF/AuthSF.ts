@@ -56,8 +56,8 @@ function authSFLogic({
 }
 
 function Auth(alias: string, instanceUrl: string) {
-  killExistingProcesses();
   checkCliInstallation();
+  killExistingProcesses();
 
   return execSync(
     `sf org login web --alias ${alias} --set-default --instance-url ${instanceUrl}`

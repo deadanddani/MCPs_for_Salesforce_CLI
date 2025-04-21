@@ -35,14 +35,14 @@ function getRecords({ alias, query }: { alias: string; query: string }) {
       `sf data query --target-org ${alias} --query "${query}"`
     );
   } catch (error: any) {
-    const errorString = error.toString();
+    const errorstring = error.tostring();
     if (
-      errorString.includes("sObject type") ||
-      errorString.includes("No such column")
+      errorstring.includes("sObject type") ||
+      errorstring.includes("No such column")
     ) {
       resultMessage = `The query failed because the object or field does not exist, please ask the user to request to refresh the context`;
     } else {
-      resultMessage = `Error during the command execution ${errorString} let the user know why it failed`;
+      resultMessage = `Error during the command execution ${errorstring} let the user know why it failed`;
     }
   }
 
