@@ -5,7 +5,7 @@ import { executeSync } from "../../helpers/CommandExecuter.js";
 export const RefreshObjectsContext: Tool = {
   name: "Refresh_Objects_Context",
   description:
-    "This tool is used when we are missing some custom or standar Object name, this will return the full list of objects, that must be later use for future comands, the return information Must be used for future requests",
+    "This tool is used when we are missing some custom or standar Object name ar the user request information related to object but not fields, this will return the full list of objects, that must be later use for future comands",
   inputSchema: {
     alias: z
       .string()
