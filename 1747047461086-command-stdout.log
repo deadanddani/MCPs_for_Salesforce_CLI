@@ -1,0 +1,846 @@
+[12:57:41.654] [90mTRACE[39m (sf-startup): [36mCreated 'sf-startup' child logger instance[39m
+[12:57:41.656] [90mTRACE[39m (sf:oclif:find-root:root-plugin): [36mCreated 'sf:oclif:find-root:root-plugin' child logger instance[39m
+[12:57:41.657] [34mDEBUG[39m (sf:oclif:find-root:root-plugin): [36mFinding root plugin using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\dist[39m
+[12:57:41.657] [34mDEBUG[39m (sf:oclif:find-root:root-plugin): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\dist[39m
+[12:57:41.657] [34mDEBUG[39m (sf:oclif:find-root:root-plugin): [36mChecking C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\dist\package.json[39m
+[12:57:41.658] [34mDEBUG[39m (sf:oclif:find-root:root-plugin): [36mChecking C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\package.json[39m
+[12:57:41.660] [34mDEBUG[39m (sf:oclif:find-root:root-plugin): [36mFound root by traversing up from starting point![39m
+[12:57:41.660] [34mDEBUG[39m (sf:oclif:find-root:root-plugin): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.660] [90mTRACE[39m (sf:oclif:config): [36mCreated 'sf:oclif:config' child logger instance[39m
+[12:57:41.660] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.660] [90mTRACE[39m (sf:oclif:read-pjson): [36mCreated 'sf:oclif:read-pjson' child logger instance[39m
+[12:57:41.660] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\package.json[39m
+[12:57:41.661] [90mTRACE[39m (sf:oclif:config:@salesforce/cli): [36mCreated 'sf:oclif:config:@salesforce/cli' child logger instance[39m
+[12:57:41.661] [34mDEBUG[39m (sf:oclif:config:@salesforce/cli): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './dist/commands'
+}[39m
+[12:57:41.665] [34mDEBUG[39m (sf:oclif:config:@salesforce/cli): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\oclif.manifest.json[39m
+[12:57:41.688] [34mDEBUG[39m (sf:oclif:config): [36mreading user plugins pjson C:\Users\dani\AppData\Local\sf\package.json[39m
+[12:57:41.689] [34mDEBUG[39m (sf:oclif:config): [36mloading plugins [
+  {
+    name: '@salesforce/plugin-code-analyzer',
+    tag: '5.0.0-beta.3',
+    type: 'user'
+  }
+][39m
+[12:57:41.689] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-code-analyzer): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-code-analyzer' child logger instance[39m
+[12:57:41.689] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-code-analyzer): [36mFinding root using C:\Users\dani\AppData\Local\sf\package.json[39m
+[12:57:41.690] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-code-analyzer): [36mrequire.resolve could not find plugin starting point[39m
+[12:57:41.690] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-code-analyzer): [36mFinding root using legacy method[39m
+[12:57:41.691] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-code-analyzer): [36mFound root at C:\Users\dani\AppData\Local\sf\node_modules\@salesforce\plugin-code-analyzer[39m
+[12:57:41.691] [34mDEBUG[39m (sf:oclif:config): [36mloading user plugin from C:\Users\dani\AppData\Local\sf\node_modules\@salesforce\plugin-code-analyzer[39m
+[12:57:41.691] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Local\sf\node_modules\@salesforce\plugin-code-analyzer\package.json[39m
+[12:57:41.691] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-code-analyzer): [36mCreated 'sf:oclif:config:@salesforce/plugin-code-analyzer' child logger instance[39m
+[12:57:41.691] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-code-analyzer): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.692] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-code-analyzer): [36musing manifest from C:\Users\dani\AppData\Local\sf\node_modules\@salesforce\plugin-code-analyzer\oclif.manifest.json[39m
+[12:57:41.713] [34mDEBUG[39m (sf:oclif:config): [36mloading plugins [
+  '@oclif/plugin-autocomplete',
+  '@oclif/plugin-commands',
+  '@oclif/plugin-help',
+  '@oclif/plugin-not-found',
+  '@oclif/plugin-plugins',
+  '@oclif/plugin-search',
+  '@oclif/plugin-update',
+  '@oclif/plugin-version',
+  '@oclif/plugin-warn-if-update-available',
+  '@oclif/plugin-which',
+  '@salesforce/plugin-apex',
+  '@salesforce/plugin-api',
+  '@salesforce/plugin-auth',
+  '@salesforce/plugin-data',
+  '@salesforce/plugin-deploy-retrieve',
+  '@salesforce/plugin-info',
+  '@salesforce/plugin-limits',
+  '@salesforce/plugin-marketplace',
+  '@salesforce/plugin-org',
+  '@salesforce/plugin-packaging',
+  '@salesforce/plugin-schema',
+  '@salesforce/plugin-settings',
+  '@salesforce/plugin-sobject',
+  '@salesforce/plugin-telemetry',
+  '@salesforce/plugin-templates',
+  '@salesforce/plugin-trust',
+  '@salesforce/plugin-user'
+][39m
+[12:57:41.713] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-autocomplete): [36mCreated 'sf:oclif:find-root:@oclif/plugin-autocomplete' child logger instance[39m
+[12:57:41.713] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-autocomplete): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.713] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-autocomplete): [36mFound starting point with require.resolve[39m
+[12:57:41.713] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-autocomplete): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-autocomplete\lib[39m
+[12:57:41.713] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-autocomplete): [36mFound root based on plugin name![39m
+[12:57:41.714] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-commands): [36mCreated 'sf:oclif:find-root:@oclif/plugin-commands' child logger instance[39m
+[12:57:41.714] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-commands): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.714] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-commands): [36mFound starting point with require.resolve[39m
+[12:57:41.714] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-commands): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-commands\lib[39m
+[12:57:41.714] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-commands): [36mFound root based on plugin name![39m
+[12:57:41.714] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-help): [36mCreated 'sf:oclif:find-root:@oclif/plugin-help' child logger instance[39m
+[12:57:41.715] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-help): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.715] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-help): [36mFound starting point with require.resolve[39m
+[12:57:41.715] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-help): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-help\lib[39m
+[12:57:41.715] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-help): [36mFound root based on plugin name![39m
+[12:57:41.715] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-not-found): [36mCreated 'sf:oclif:find-root:@oclif/plugin-not-found' child logger instance[39m
+[12:57:41.715] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-not-found): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.716] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-not-found): [36mFound starting point with require.resolve[39m
+[12:57:41.716] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-not-found): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-not-found\lib[39m
+[12:57:41.716] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-not-found): [36mFound root based on plugin name![39m
+[12:57:41.716] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-plugins): [36mCreated 'sf:oclif:find-root:@oclif/plugin-plugins' child logger instance[39m
+[12:57:41.716] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-plugins): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.717] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-plugins): [36mFound starting point with require.resolve[39m
+[12:57:41.717] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-plugins): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-plugins\lib[39m
+[12:57:41.717] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-plugins): [36mFound root based on plugin name![39m
+[12:57:41.717] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-search): [36mCreated 'sf:oclif:find-root:@oclif/plugin-search' child logger instance[39m
+[12:57:41.717] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-search): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.717] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-search): [36mFound starting point with require.resolve[39m
+[12:57:41.717] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-search): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-search\dist[39m
+[12:57:41.717] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-search): [36mFound root based on plugin name![39m
+[12:57:41.718] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-update): [36mCreated 'sf:oclif:find-root:@oclif/plugin-update' child logger instance[39m
+[12:57:41.718] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-update): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.718] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-update): [36mFound starting point with require.resolve[39m
+[12:57:41.718] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-update): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-update\dist[39m
+[12:57:41.718] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-update): [36mFound root based on plugin name![39m
+[12:57:41.719] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-version): [36mCreated 'sf:oclif:find-root:@oclif/plugin-version' child logger instance[39m
+[12:57:41.719] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-version): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.719] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-version): [36mFound starting point with require.resolve[39m
+[12:57:41.719] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-version): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-version\lib[39m
+[12:57:41.719] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-version): [36mFound root based on plugin name![39m
+[12:57:41.719] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-warn-if-update-available): [36mCreated 'sf:oclif:find-root:@oclif/plugin-warn-if-update-available' child logger instance[39m
+[12:57:41.719] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-warn-if-update-available): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.720] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-warn-if-update-available): [36mFound starting point with require.resolve[39m
+[12:57:41.720] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-warn-if-update-available): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-warn-if-update-available\lib[39m
+[12:57:41.720] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-warn-if-update-available): [36mFound root based on plugin name![39m
+[12:57:41.720] [90mTRACE[39m (sf:oclif:find-root:@oclif/plugin-which): [36mCreated 'sf:oclif:find-root:@oclif/plugin-which' child logger instance[39m
+[12:57:41.720] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-which): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-which): [36mFound starting point with require.resolve[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-which): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-which\lib[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-which): [36mFound root based on plugin name![39m
+[12:57:41.721] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-apex): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-apex' child logger instance[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-apex): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-apex): [36mFound starting point with require.resolve[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-apex): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-apex\lib[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-apex): [36mFound root based on plugin name![39m
+[12:57:41.721] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-api): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-api' child logger instance[39m
+[12:57:41.721] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-api): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.722] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-api): [36mFound starting point with require.resolve[39m
+[12:57:41.722] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-api): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-api\lib[39m
+[12:57:41.722] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-api): [36mFound root based on plugin name![39m
+[12:57:41.722] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-auth): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-auth' child logger instance[39m
+[12:57:41.722] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-auth): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.722] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-auth): [36mFound starting point with require.resolve[39m
+[12:57:41.722] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-auth): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-auth\lib[39m
+[12:57:41.722] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-auth): [36mFound root based on plugin name![39m
+[12:57:41.723] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-data): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-data' child logger instance[39m
+[12:57:41.723] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-data): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.723] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-data): [36mFound starting point with require.resolve[39m
+[12:57:41.723] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-data): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-data\lib[39m
+[12:57:41.723] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-data): [36mFound root based on plugin name![39m
+[12:57:41.723] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-deploy-retrieve): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-deploy-retrieve' child logger instance[39m
+[12:57:41.723] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-deploy-retrieve): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-deploy-retrieve): [36mFound starting point with require.resolve[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-deploy-retrieve): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-deploy-retrieve\lib[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-deploy-retrieve): [36mFound root based on plugin name![39m
+[12:57:41.724] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-info): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-info' child logger instance[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-info): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-info): [36mFound starting point with require.resolve[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-info): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-info\lib[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-info): [36mFound root based on plugin name![39m
+[12:57:41.724] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-limits): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-limits' child logger instance[39m
+[12:57:41.724] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-limits): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-limits): [36mFound starting point with require.resolve[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-limits): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-limits\lib[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-limits): [36mFound root based on plugin name![39m
+[12:57:41.725] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-marketplace): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-marketplace' child logger instance[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-marketplace): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-marketplace): [36mFound starting point with require.resolve[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-marketplace): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-marketplace\lib[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-marketplace): [36mFound root based on plugin name![39m
+[12:57:41.725] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-org): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-org' child logger instance[39m
+[12:57:41.725] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-org): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.726] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-org): [36mFound starting point with require.resolve[39m
+[12:57:41.726] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-org): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-org\lib[39m
+[12:57:41.726] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-org): [36mFound root based on plugin name![39m
+[12:57:41.726] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-packaging): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-packaging' child logger instance[39m
+[12:57:41.726] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-packaging): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.726] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-packaging): [36mFound starting point with require.resolve[39m
+[12:57:41.726] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-packaging): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-packaging\lib[39m
+[12:57:41.726] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-packaging): [36mFound root based on plugin name![39m
+[12:57:41.727] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-schema): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-schema' child logger instance[39m
+[12:57:41.727] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-schema): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.727] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-schema): [36mFound starting point with require.resolve[39m
+[12:57:41.727] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-schema): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-schema\lib[39m
+[12:57:41.727] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-schema): [36mFound root based on plugin name![39m
+[12:57:41.727] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-settings): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-settings' child logger instance[39m
+[12:57:41.727] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-settings): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.728] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-settings): [36mFound starting point with require.resolve[39m
+[12:57:41.728] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-settings): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-settings\lib[39m
+[12:57:41.728] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-settings): [36mFound root based on plugin name![39m
+[12:57:41.728] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-sobject): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-sobject' child logger instance[39m
+[12:57:41.728] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-sobject): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.729] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-sobject): [36mFound starting point with require.resolve[39m
+[12:57:41.729] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-sobject): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-sobject\lib[39m
+[12:57:41.729] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-sobject): [36mFound root based on plugin name![39m
+[12:57:41.729] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-telemetry): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-telemetry' child logger instance[39m
+[12:57:41.729] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-telemetry): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.730] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-telemetry): [36mFound starting point with require.resolve[39m
+[12:57:41.730] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-telemetry): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry\lib[39m
+[12:57:41.730] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-telemetry): [36mFound root based on plugin name![39m
+[12:57:41.730] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-templates): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-templates' child logger instance[39m
+[12:57:41.730] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-templates): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.731] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-templates): [36mFound starting point with require.resolve[39m
+[12:57:41.731] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-templates): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-templates\lib[39m
+[12:57:41.731] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-templates): [36mFound root based on plugin name![39m
+[12:57:41.731] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-trust): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-trust' child logger instance[39m
+[12:57:41.731] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-trust): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.732] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-trust): [36mFound starting point with require.resolve[39m
+[12:57:41.732] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-trust): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-trust\lib[39m
+[12:57:41.732] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-trust): [36mFound root based on plugin name![39m
+[12:57:41.732] [90mTRACE[39m (sf:oclif:find-root:@salesforce/plugin-user): [36mCreated 'sf:oclif:find-root:@salesforce/plugin-user' child logger instance[39m
+[12:57:41.732] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-user): [36mFinding root using C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-user): [36mFound starting point with require.resolve[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-user): [36mFinding root starting at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-user\lib[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-user): [36mFound root based on plugin name![39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-autocomplete): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-autocomplete[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-commands): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-commands[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-help): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-help[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-not-found): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-not-found[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-plugins): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-plugins[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-search): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-search[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-update): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-update[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-version): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-version[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-warn-if-update-available): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-warn-if-update-available[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@oclif/plugin-which): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-which[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-apex): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-apex[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-api): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-api[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-auth): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-auth[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-data): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-data[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-deploy-retrieve): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-deploy-retrieve[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-info): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-info[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-limits): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-limits[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-marketplace): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-marketplace[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-org): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-org[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-packaging): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-packaging[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-schema): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-schema[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-settings): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-settings[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-sobject): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-sobject[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-telemetry): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-templates): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-templates[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-trust): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-trust[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:find-root:@salesforce/plugin-user): [36mFound root at C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-user[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-autocomplete[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-commands[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-help[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-not-found[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-plugins[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-search[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-update[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-version[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-warn-if-update-available[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-which[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-apex[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-api[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-auth[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-data[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-deploy-retrieve[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-info[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-limits[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-marketplace[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-org[39m
+[12:57:41.733] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-packaging[39m
+[12:57:41.734] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-schema[39m
+[12:57:41.734] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-settings[39m
+[12:57:41.734] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-sobject[39m
+[12:57:41.734] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry[39m
+[12:57:41.734] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-templates[39m
+[12:57:41.734] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-trust[39m
+[12:57:41.734] [34mDEBUG[39m (sf:oclif:config): [36mloading core plugin from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-user[39m
+[12:57:41.735] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-autocomplete\package.json[39m
+[12:57:41.735] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-autocomplete): [36mCreated 'sf:oclif:config:@oclif/plugin-autocomplete' child logger instance[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-autocomplete): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-commands\package.json[39m
+[12:57:41.736] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-commands): [36mCreated 'sf:oclif:config:@oclif/plugin-commands' child logger instance[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-commands): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-help\package.json[39m
+[12:57:41.736] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-help): [36mCreated 'sf:oclif:config:@oclif/plugin-help' child logger instance[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-help): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-not-found\package.json[39m
+[12:57:41.736] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-not-found): [36mCreated 'sf:oclif:config:@oclif/plugin-not-found' child logger instance[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-not-found): [36mcommand discovery options undefined[39m
+[12:57:41.736] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-plugins\package.json[39m
+[12:57:41.736] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-plugins): [36mCreated 'sf:oclif:config:@oclif/plugin-plugins' child logger instance[39m
+[12:57:41.737] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-plugins): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.737] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-search\package.json[39m
+[12:57:41.737] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-search): [36mCreated 'sf:oclif:config:@oclif/plugin-search' child logger instance[39m
+[12:57:41.737] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-search): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './dist/commands'
+}[39m
+[12:57:41.737] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-update\package.json[39m
+[12:57:41.737] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-update): [36mCreated 'sf:oclif:config:@oclif/plugin-update' child logger instance[39m
+[12:57:41.737] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-update): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './dist/commands'
+}[39m
+[12:57:41.737] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-version\package.json[39m
+[12:57:41.737] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-version): [36mCreated 'sf:oclif:config:@oclif/plugin-version' child logger instance[39m
+[12:57:41.737] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-version): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-warn-if-update-available\package.json[39m
+[12:57:41.738] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-warn-if-update-available): [36mCreated 'sf:oclif:config:@oclif/plugin-warn-if-update-available' child logger instance[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-warn-if-update-available): [36mcommand discovery options undefined[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-which\package.json[39m
+[12:57:41.738] [90mTRACE[39m (sf:oclif:config:@oclif/plugin-which): [36mCreated 'sf:oclif:config:@oclif/plugin-which' child logger instance[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-which): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-apex\package.json[39m
+[12:57:41.738] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-apex): [36mCreated 'sf:oclif:config:@salesforce/plugin-apex' child logger instance[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-apex): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-api\package.json[39m
+[12:57:41.738] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-api): [36mCreated 'sf:oclif:config:@salesforce/plugin-api' child logger instance[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-api): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-auth\package.json[39m
+[12:57:41.738] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-auth): [36mCreated 'sf:oclif:config:@salesforce/plugin-auth' child logger instance[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-auth): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.738] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-data\package.json[39m
+[12:57:41.739] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-data): [36mCreated 'sf:oclif:config:@salesforce/plugin-data' child logger instance[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-data): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-deploy-retrieve\package.json[39m
+[12:57:41.739] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-deploy-retrieve): [36mCreated 'sf:oclif:config:@salesforce/plugin-deploy-retrieve' child logger instance[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-deploy-retrieve): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-info\package.json[39m
+[12:57:41.739] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-info): [36mCreated 'sf:oclif:config:@salesforce/plugin-info' child logger instance[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-info): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-marketplace\package.json[39m
+[12:57:41.739] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-marketplace): [36mCreated 'sf:oclif:config:@salesforce/plugin-marketplace' child logger instance[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-marketplace): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-limits\package.json[39m
+[12:57:41.739] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-limits): [36mCreated 'sf:oclif:config:@salesforce/plugin-limits' child logger instance[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-limits): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-org\package.json[39m
+[12:57:41.739] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-org): [36mCreated 'sf:oclif:config:@salesforce/plugin-org' child logger instance[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-org): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-packaging\package.json[39m
+[12:57:41.739] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-packaging): [36mCreated 'sf:oclif:config:@salesforce/plugin-packaging' child logger instance[39m
+[12:57:41.739] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-packaging): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.740] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-schema\package.json[39m
+[12:57:41.740] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-schema): [36mCreated 'sf:oclif:config:@salesforce/plugin-schema' child logger instance[39m
+[12:57:41.740] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-schema): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.740] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-settings\package.json[39m
+[12:57:41.740] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-settings): [36mCreated 'sf:oclif:config:@salesforce/plugin-settings' child logger instance[39m
+[12:57:41.740] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-settings): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.740] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-sobject\package.json[39m
+[12:57:41.740] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-sobject): [36mCreated 'sf:oclif:config:@salesforce/plugin-sobject' child logger instance[39m
+[12:57:41.740] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-sobject): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.740] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry\package.json[39m
+[12:57:41.740] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-telemetry): [36mCreated 'sf:oclif:config:@salesforce/plugin-telemetry' child logger instance[39m
+[12:57:41.741] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-telemetry): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.741] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-templates\package.json[39m
+[12:57:41.741] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-templates): [36mCreated 'sf:oclif:config:@salesforce/plugin-templates' child logger instance[39m
+[12:57:41.741] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-templates): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.741] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-user\package.json[39m
+[12:57:41.741] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-user): [36mCreated 'sf:oclif:config:@salesforce/plugin-user' child logger instance[39m
+[12:57:41.741] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-user): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.741] [34mDEBUG[39m (sf:oclif:read-pjson): [36mfound oclif config in C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-trust\package.json[39m
+[12:57:41.741] [90mTRACE[39m (sf:oclif:config:@salesforce/plugin-trust): [36mCreated 'sf:oclif:config:@salesforce/plugin-trust' child logger instance[39m
+[12:57:41.741] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-trust): [36mcommand discovery options {
+  globPatterns: [
+    '**/*.+(js|cjs|mjs|ts|tsx|mts|cts)',
+    '!**/*.+(d.ts|test.ts|test.js|spec.ts|spec.js|d.mts|d.cts)?(x)'
+  ],
+  strategy: 'pattern',
+  target: './lib/commands'
+}[39m
+[12:57:41.744] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-autocomplete): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-autocomplete\oclif.manifest.json[39m
+[12:57:41.745] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-help): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-help\oclif.manifest.json[39m
+[12:57:41.745] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-commands): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-commands\oclif.manifest.json[39m
+[12:57:41.745] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-not-found): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-not-found\oclif.manifest.json[39m
+[12:57:41.745] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-plugins): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-plugins\oclif.manifest.json[39m
+[12:57:41.745] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-search): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-search\oclif.manifest.json[39m
+[12:57:41.746] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-update): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-update\oclif.manifest.json[39m
+[12:57:41.746] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-version): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-version\oclif.manifest.json[39m
+[12:57:41.746] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-warn-if-update-available): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-warn-if-update-available\oclif.manifest.json[39m
+[12:57:41.746] [34mDEBUG[39m (sf:oclif:config:@oclif/plugin-which): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-which\oclif.manifest.json[39m
+[12:57:41.746] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-api): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-api\oclif.manifest.json[39m
+[12:57:41.746] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-apex): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-apex\oclif.manifest.json[39m
+[12:57:41.747] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-auth): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-auth\oclif.manifest.json[39m
+[12:57:41.747] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-marketplace): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-marketplace\oclif.manifest.json[39m
+[12:57:41.747] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-info): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-info\oclif.manifest.json[39m
+[12:57:41.747] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-limits): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-limits\oclif.manifest.json[39m
+[12:57:41.749] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-deploy-retrieve): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-deploy-retrieve\oclif.manifest.json[39m
+[12:57:41.749] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-org): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-org\oclif.manifest.json[39m
+[12:57:41.750] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-schema): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-schema\oclif.manifest.json[39m
+[12:57:41.751] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-data): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-data\oclif.manifest.json[39m
+[12:57:41.751] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-sobject): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-sobject\oclif.manifest.json[39m
+[12:57:41.751] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-telemetry): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry\oclif.manifest.json[39m
+[12:57:41.751] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-settings): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-settings\oclif.manifest.json[39m
+[12:57:41.751] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-trust): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-trust\oclif.manifest.json[39m
+[12:57:41.752] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-user): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-user\oclif.manifest.json[39m
+[12:57:41.753] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-packaging): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-packaging\oclif.manifest.json[39m
+[12:57:41.753] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-templates): [36musing manifest from C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-templates\oclif.manifest.json[39m
+[12:57:41.771] [34mDEBUG[39m (sf:oclif:config): [36mconfig done[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m               ### OS ###[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                 platform: win32[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m             architecture: x64[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                  release: 10.0.26100[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                    shell: cmd.exe[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m             ### NODE ###[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                  version: 22.14.0[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m              ### CLI ###[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                  version: 2.84.6[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                  channel: stable[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                      bin: sf[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                     data: C:\Users\dani\AppData\Local\sf[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                    cache: C:\Users\dani\AppData\Local\sf[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                   config: C:\Users\dani\AppData\Local\sf[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m              ### ENV ###[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m    SF_AUTOUPDATE_DISABLE: true[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                 SF_DEBUG: 1[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m    SF_DISABLE_AUTOUPDATE: true[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                   SF_ENV: development[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m             SF_LOG_LEVEL: trace[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m   SF_UPDATE_INSTRUCTIONS: Use "npm update --global @salesforce/cli" to update npm-based installations.[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m             NODE_OPTIONS: <not set>[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m               SF_BINPATH: <not set>[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m         SF_COMPILE_CACHE: <not set>[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m             SF_INSTALLER: <not set>[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m          SF_NPM_REGISTRY: <not set>[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m            SF_REDIRECTED: <not set>[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m             ### ARGS ###[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                        0: C:\Program Files\nodejs\node.exe[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                        1: C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\bin\run.js[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                        2: force:org:list[39m
+[12:57:41.772] [34mDEBUG[39m (sf-startup): [36m                        3: --all[39m
+[12:57:41.773] [90mTRACE[39m (sf:oclif:main): [36mCreated 'sf:oclif:main' child logger instance[39m
+[12:57:41.773] [34mDEBUG[39m (sf:oclif:main): [36mprocess.execPath: C:\Program Files\nodejs\node.exe[39m
+[12:57:41.773] [34mDEBUG[39m (sf:oclif:main): [36mprocess.execArgv: --no-deprecation[39m
+[12:57:41.773] [34mDEBUG[39m (sf:oclif:main): [36mprocess.argv: [
+  'C:\\Program Files\\nodejs\\node.exe',
+  'C:\\Users\\dani\\AppData\\Roaming\\npm\\node_modules\\@salesforce\\cli\\bin\\run.js',
+  'force:org:list',
+  '--all'
+][39m
+[12:57:41.773] [34mDEBUG[39m (sf:oclif:config): [36mstart init hook[39m
+[12:57:41.774] [90mTRACE[39m (sf:oclif:config:ts-path): [36mCreated 'sf:oclif:config:ts-path' child logger instance[39m
+[12:57:41.774] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-update because NODE_ENV is NOT "test" or "development"[39m
+[12:57:41.774] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-warn-if-update-available because NODE_ENV is NOT "test" or "development"[39m
+[12:57:41.774] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-settings because NODE_ENV is NOT "test" or "development"[39m
+[12:57:41.792] [90mTRACE[39m (sf:oclif:@oclif/plugin-update:hooks:init): [36mCreated 'sf:oclif:@oclif/plugin-update:hooks:init' child logger instance[39m
+┌──┬──────────┬─────────────────────────────────────────────┬────────────────────┬───────────┐
+│  │ Alias    │ Username                                    │ Org Id             │ Status    │
+├──┼──────────┼─────────────────────────────────────────────┼────────────────────┼───────────┤
+│  │ [95mtestDani[39m │ [95mdaniel.vadillo.1q@resilient-bear-1tkts2.com[39m │ [95m00DWU00000MScgs2AD[39m │ [32mConnected[39m │
+└──┴──────────┴─────────────────────────────────────────────┴────────────────────┴───────────┘
+
+[12:57:41.792] [34mDEBUG[39m (sf:oclif:@oclif/plugin-update:hooks:init): [36mstart (import) C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-update\dist\hooks\init.js[39m
+[2m[22m
+[2mLegend:  🌳=Default DevHub, 🍁=Default Org [22m
+[12:57:41.792] [34mDEBUG[39m (sf:oclif:@oclif/plugin-update:hooks:init): [36mdone[39m
+[12:57:41.816] [90mTRACE[39m (sf:oclif:@salesforce/plugin-settings:hooks:init): [36mCreated 'sf:oclif:@salesforce/plugin-settings:hooks:init' child logger instance[39m
+[12:57:41.816] [34mDEBUG[39m (sf:oclif:@salesforce/plugin-settings:hooks:init): [36mstart (import) C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-settings\lib\hooks\init\load_config_meta.js[39m
+[12:57:41.817] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-deploy-retrieve because NODE_ENV is NOT "test" or "development"[39m
+[12:57:41.843] [90mTRACE[39m (sf:oclif:@oclif/plugin-warn-if-update-available:hooks:init): [36mCreated 'sf:oclif:@oclif/plugin-warn-if-update-available:hooks:init' child logger instance[39m
+[12:57:41.843] [34mDEBUG[39m (sf:oclif:@oclif/plugin-warn-if-update-available:hooks:init): [36mstart (import) C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@oclif\plugin-warn-if-update-available\lib\hooks\init\check-update.js[39m
+[12:57:41.872] [34mDEBUG[39m (sf:oclif:@oclif/plugin-warn-if-update-available:hooks:init): [36mdone[39m
+[12:57:41.930] [90mTRACE[39m (sf:oclif:core:config): [36mCreated 'sf:oclif:core:config' child logger instance[39m
+[12:57:41.930] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:core:config' logger instance[39m
+[12:57:41.930] [34mDEBUG[39m (sf:oclif:@salesforce/plugin-settings:hooks:init): [36mdone[39m
+[12:57:41.930] [34mDEBUG[39m (sf:oclif:config): [36minit hook done[39m
+[12:57:41.930] [34mDEBUG[39m (sf:oclif:config): [36mrunCommand force:org:list [ '--all', [length]: 1 ][39m
+[12:57:41.930] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-org because NODE_ENV is NOT "test" or "development"[39m
+[12:57:42.596] [34mDEBUG[39m (sf:oclif:config:@salesforce/plugin-org): [36m(import) C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-org\lib\commands\org\list.js[39m
+[12:57:42.597] [34mDEBUG[39m (sf:oclif:config): [36mstart prerun hook[39m
+[12:57:42.597] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli because NODE_ENV is NOT "test" or "development"[39m
+[12:57:42.597] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry because NODE_ENV is NOT "test" or "development"[39m
+[12:57:42.606] [90mTRACE[39m (sf:oclif:@salesforce/cli:hooks:prerun): [36mCreated 'sf:oclif:@salesforce/cli:hooks:prerun' child logger instance[39m
+[12:57:42.606] [34mDEBUG[39m (sf:oclif:@salesforce/cli:hooks:prerun): [36mstart (import) C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\dist\hooks\prerun.js[39m
+[12:57:42.606] [34mDEBUG[39m (sf:oclif:@salesforce/cli:hooks:prerun): [36mdone[39m
+[12:57:42.609] [90mTRACE[39m (sf:oclif:@salesforce/plugin-telemetry:hooks:prerun): [36mCreated 'sf:oclif:@salesforce/plugin-telemetry:hooks:prerun' child logger instance[39m
+[12:57:42.609] [34mDEBUG[39m (sf:oclif:@salesforce/plugin-telemetry:hooks:prerun): [36mstart (import) C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry\lib\hooks\telemetryPrerun.js[39m
+[12:57:42.610] [90mTRACE[39m (sf:oclif:Config): [36mCreated 'sf:oclif:Config' child logger instance[39m
+[12:57:42.610] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:Config' logger instance[39m
+[12:57:42.611] [90mTRACE[39m (sf:oclif:Config): [36mCreated 'sf:oclif:Config' child logger instance[39m
+[12:57:42.611] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:Config' logger instance[39m
+[12:57:42.611] [34mDEBUG[39m (sf:oclif:Config): [36mReading config file: C:\Users\dani\.sf\config.json because hasRead is false[39m
+[12:57:42.643] [34mDEBUG[39m (sf:oclif:@salesforce/plugin-telemetry:hooks:prerun): [36mdone[39m
+[12:57:42.643] [34mDEBUG[39m (sf:oclif:config): [36mprerun hook done[39m
+[12:57:42.644] [90mTRACE[39m (sf:oclif:sf:org:list): [36mCreated 'sf:oclif:sf:org:list' child logger instance[39m
+[12:57:42.644] [34mDEBUG[39m (sf:oclif:sf:org:list): [36minit version: @oclif/core@4.2.10 argv: [ '--all', [length]: 1 ][39m
+[12:57:42.645] [34mDEBUG[39m (sf:oclif:config): [36mstart preparse hook[39m
+[12:57:42.645] [34mDEBUG[39m (sf:oclif:config:ts-path): [36mSkipping typescript path lookup for C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli because NODE_ENV is NOT "test" or "development"[39m
+[12:57:42.647] [90mTRACE[39m (sf:oclif:OrgAccessor): [36mCreated 'sf:oclif:OrgAccessor' child logger instance[39m
+[12:57:42.647] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:OrgAccessor' logger instance[39m
+[12:57:42.647] [90mTRACE[39m (sf:oclif:SandboxAccessor): [36mCreated 'sf:oclif:SandboxAccessor' child logger instance[39m
+[12:57:42.647] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:SandboxAccessor' logger instance[39m
+[12:57:42.648] [90mTRACE[39m (sf:oclif:@salesforce/cli:hooks:preparse): [36mCreated 'sf:oclif:@salesforce/cli:hooks:preparse' child logger instance[39m
+[12:57:42.648] [34mDEBUG[39m (sf:oclif:@salesforce/cli:hooks:preparse): [36mstart (import) C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\dist\hooks\preparse.js[39m
+[12:57:42.648] [34mDEBUG[39m (sf:oclif:@salesforce/cli:hooks:preparse): [36mdone[39m
+[12:57:42.648] [34mDEBUG[39m (sf:oclif:config): [36mpreparse hook done[39m
+[12:57:42.662] [90mTRACE[39m (sf:oclif:AuthInfoConfig): [36mCreated 'sf:oclif:AuthInfoConfig' child logger instance[39m
+[12:57:42.662] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfoConfig' logger instance[39m
+[12:57:42.662] [90mTRACE[39m (sf:oclif:keyChain): [36mCreated 'sf:oclif:keyChain' child logger instance[39m
+[12:57:42.662] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:keyChain' logger instance[39m
+[12:57:42.662] [34mDEBUG[39m (sf:oclif:keyChain): [36mplatform: win32. Using generic Windows keychain.[39m
+[12:57:42.663] [90mTRACE[39m (sf:oclif:crypto): [36mCreated 'sf:oclif:crypto' child logger instance[39m
+[12:57:42.663] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:crypto' logger instance[39m
+[12:57:42.663] [34mDEBUG[39m (sf:oclif:crypto): [36mUsing v1 crypto[39m
+[12:57:42.665] [34mDEBUG[39m (sf:oclif:AuthInfoConfig): [36mReading config file: C:\Users\dani\.sfdx\daniel.vadillo.1q@resilient-bear-1tkts2.com.json because hasRead is false[39m
+[12:57:42.666] [90mTRACE[39m (sf:oclif:AuthInfoConfig): [36mCreated 'sf:oclif:AuthInfoConfig' child logger instance[39m
+[12:57:42.666] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfoConfig' logger instance[39m
+[12:57:42.666] [90mTRACE[39m (sf:oclif:keyChain): [36mCreated 'sf:oclif:keyChain' child logger instance[39m
+[12:57:42.666] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:keyChain' logger instance[39m
+[12:57:42.666] [34mDEBUG[39m (sf:oclif:keyChain): [36mplatform: win32. Using generic Windows keychain.[39m
+[12:57:42.667] [34mDEBUG[39m (sf:oclif:AuthInfoConfig): [36mReading config file: C:\Users\dani\.sfdx\daniel.vadillo.1q@resilient-bear-1tkts2.com.json because hasRead is false[39m
+[12:57:42.668] [90mTRACE[39m (sf:oclif:AuthInfo): [36mCreated 'sf:oclif:AuthInfo' child logger instance[39m
+[12:57:42.668] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfo' logger instance[39m
+[12:57:42.668] [34mDEBUG[39m (sf:oclif:SandboxAccessor): [36mNo auth file found for 00DWU00000MScgs2AD[39m
+[12:57:42.669] [32mINFO[39m (sf:oclif:AuthInfo): [36mReturning fields for a connection using OAuth config.[39m
+[12:57:42.670] [90mTRACE[39m (sf:oclif:AuthInfoConfig): [36mCreated 'sf:oclif:AuthInfoConfig' child logger instance[39m
+[12:57:42.670] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfoConfig' logger instance[39m
+[12:57:42.670] [90mTRACE[39m (sf:oclif:keyChain): [36mCreated 'sf:oclif:keyChain' child logger instance[39m
+[12:57:42.670] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:keyChain' logger instance[39m
+[12:57:42.670] [34mDEBUG[39m (sf:oclif:keyChain): [36mplatform: win32. Using generic Windows keychain.[39m
+[12:57:42.671] [34mDEBUG[39m (sf:oclif:AuthInfoConfig): [36mReading config file: C:\Users\dani\.sfdx\daniel.vadillo.1q@resilient-bear-1tkts2.com.json because hasRead is false[39m
+[12:57:42.672] [90mTRACE[39m (sf:oclif:AuthInfo): [36mCreated 'sf:oclif:AuthInfo' child logger instance[39m
+[12:57:42.672] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfo' logger instance[39m
+[12:57:42.687] [90mTRACE[39m (sf:oclif:Org): [36mCreated 'sf:oclif:Org' child logger instance[39m
+[12:57:42.687] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:Org' logger instance[39m
+[12:57:42.687] [90mTRACE[39m (sf:oclif:AuthInfoConfig): [36mCreated 'sf:oclif:AuthInfoConfig' child logger instance[39m
+[12:57:42.687] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfoConfig' logger instance[39m
+[12:57:42.687] [90mTRACE[39m (sf:oclif:keyChain): [36mCreated 'sf:oclif:keyChain' child logger instance[39m
+[12:57:42.687] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:keyChain' logger instance[39m
+[12:57:42.687] [34mDEBUG[39m (sf:oclif:keyChain): [36mplatform: win32. Using generic Windows keychain.[39m
+[12:57:42.687] [34mDEBUG[39m (sf:oclif:AuthInfoConfig): [36mReading config file: C:\Users\dani\.sfdx\daniel.vadillo.1q@resilient-bear-1tkts2.com.json because hasRead is false[39m
+[12:57:42.688] [90mTRACE[39m (sf:oclif:AuthInfo): [36mCreated 'sf:oclif:AuthInfo' child logger instance[39m
+[12:57:42.688] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfo' logger instance[39m
+[12:57:42.694] [32mINFO[39m (sf:oclif:AuthInfo): [36mReturning fields for a connection using OAuth config.[39m
+[12:57:42.695] [90mTRACE[39m (sf:oclif:connection): [36mCreated 'sf:oclif:connection' child logger instance[39m
+[12:57:42.695] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:connection' logger instance[39m
+[12:57:42.700] [34mDEBUG[39m (sf:oclif:connection): [36mAPI version cache last checked on 12/5/2025, 12:36:23 (now is 12/5/2025, 12:57:42)[39m
+[12:57:42.700] [34mDEBUG[39m (sf:oclif:connection): [36mUsing cached API version: 63.0[39m
+[12:57:42.700] [34mDEBUG[39m (sf:oclif:connection): [36mConnection created with apiVersion 63.0[39m
+[12:57:42.701] [34mDEBUG[39m (sf:oclif:Org): [36mRefreshing auth for org.[39m
+[12:57:42.701] [34mDEBUG[39m (sf:oclif:connection): [36mrequest[39m
+    url: "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com/services/data/v63.0"
+    method: "HEAD"
+    headers: {
+      "content-type": "application/json",
+      "user-agent": "sfdx toolbelt:"
+    }
+[12:57:42.933] [90mTRACE[39m (sf:oclif:Org): [36mCreated 'sf:oclif:Org' child logger instance[39m
+[12:57:42.933] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:Org' logger instance[39m
+[12:57:42.933] [90mTRACE[39m (sf:oclif:AuthInfoConfig): [36mCreated 'sf:oclif:AuthInfoConfig' child logger instance[39m
+[12:57:42.933] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfoConfig' logger instance[39m
+[12:57:42.933] [90mTRACE[39m (sf:oclif:keyChain): [36mCreated 'sf:oclif:keyChain' child logger instance[39m
+[12:57:42.933] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:keyChain' logger instance[39m
+[12:57:42.933] [34mDEBUG[39m (sf:oclif:keyChain): [36mplatform: win32. Using generic Windows keychain.[39m
+[12:57:42.933] [34mDEBUG[39m (sf:oclif:AuthInfoConfig): [36mReading config file: C:\Users\dani\.sfdx\daniel.vadillo.1q@resilient-bear-1tkts2.com.json because hasRead is false[39m
+[12:57:42.935] [90mTRACE[39m (sf:oclif:AuthInfo): [36mCreated 'sf:oclif:AuthInfo' child logger instance[39m
+[12:57:42.935] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfo' logger instance[39m
+[12:57:42.942] [32mINFO[39m (sf:oclif:AuthInfo): [36mReturning fields for a connection using OAuth config.[39m
+[12:57:42.942] [90mTRACE[39m (sf:oclif:connection): [36mCreated 'sf:oclif:connection' child logger instance[39m
+[12:57:42.942] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:connection' logger instance[39m
+[12:57:42.942] [34mDEBUG[39m (sf:oclif:connection): [36mAPI version cache last checked on 12/5/2025, 12:36:23 (now is 12/5/2025, 12:57:42)[39m
+[12:57:42.942] [34mDEBUG[39m (sf:oclif:connection): [36mUsing cached API version: 63.0[39m
+[12:57:42.942] [34mDEBUG[39m (sf:oclif:connection): [36mConnection created with apiVersion 63.0[39m
+[12:57:42.942] [34mDEBUG[39m (sf:oclif:Org): [36misDevHub is not cached - querying server...[39m
+[12:57:42.943] [34mDEBUG[39m (sf:oclif:connection): [36mrequest[39m
+    method: "GET"
+    url: "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com/services/data/v63.0/query?q=SELECT%20Id%20FROM%20ScratchOrgInfo%20limit%201"
+    headers: {
+      "content-type": "application/json",
+      "user-agent": "sfdx toolbelt:"
+    }
+[12:57:43.114] [90mTRACE[39m (sf:oclif:AuthInfoConfig): [36mCreated 'sf:oclif:AuthInfoConfig' child logger instance[39m
+[12:57:43.114] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfoConfig' logger instance[39m
+[12:57:43.114] [90mTRACE[39m (sf:oclif:keyChain): [36mCreated 'sf:oclif:keyChain' child logger instance[39m
+[12:57:43.114] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:keyChain' logger instance[39m
+[12:57:43.115] [34mDEBUG[39m (sf:oclif:keyChain): [36mplatform: win32. Using generic Windows keychain.[39m
+[12:57:43.115] [34mDEBUG[39m (sf:oclif:AuthInfoConfig): [36mReading config file: C:\Users\dani\.sfdx\daniel.vadillo.1q@resilient-bear-1tkts2.com.json because hasRead is false[39m
+[12:57:43.116] [90mTRACE[39m (sf:oclif:AuthInfo): [36mCreated 'sf:oclif:AuthInfo' child logger instance[39m
+[12:57:43.116] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:AuthInfo' logger instance[39m
+[12:57:43.117] [32mINFO[39m (sf:oclif:AuthInfo): [36mUpdated auth info for username: daniel.vadillo.1q@resilient-bear-1tkts2.com[39m
+[12:57:43.119] [34mDEBUG[39m (sf:oclif:AuthInfoConfig):
+    0: "Existing file contents on filesystem (timestamp: 1747047224545839700"
+    1: {
+      "accessToken": "e601e5b4723563ca207742ccf4e07403c40621ce589a990094728a6b4b9be5b44fc54ed8a1b274b8314831b06077de8e19ccd9bbe8fbe1e68ef79e112e144c4448b4c844b0d38846be0df7d85772b45cdb4d50259d5de7d40f386699074bc8558759c38f72f211384c0152cda0e053a4099466fd40aa:54124e06d74e3b153db1c4f2b4aad9ec",
+      "instanceUrl": "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com",
+      "orgId": "00DWU00000MScgs2AD",
+      "username": "daniel.vadillo.1q@resilient-bear-1tkts2.com",
+      "loginUrl": "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com/",
+      "refreshToken": "<refresh_token - HIDDEN>",
+      "clientId": "PlatformCLI",
+      "isDevHub": false,
+      "instanceApiVersion": "63.0",
+      "instanceApiVersionLastRetrieved": "12/5/2025, 12:36:23"
+    }
+[12:57:43.119] [34mDEBUG[39m (sf:oclif:AuthInfoConfig):
+    0: "Contents in configFile in-memory"
+    1: {
+      "accessToken": "e601e5b4723563ca207742ccf4e07403c40621ce589a990094728a6b4b9be5b44fc54ed8a1b274b8314831b06077de8e19ccd9bbe8fbe1e68ef79e112e144c4448b4c844b0d38846be0df7d85772b45cdb4d50259d5de7d40f386699074bc8558759c38f72f211384c0152cda0e053a4099466fd40aa:54124e06d74e3b153db1c4f2b4aad9ec",
+      "instanceUrl": "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com",
+      "orgId": "00DWU00000MScgs2AD",
+      "username": "daniel.vadillo.1q@resilient-bear-1tkts2.com",
+      "loginUrl": "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com/",
+      "refreshToken": "<refresh_token - HIDDEN>",
+      "clientId": "PlatformCLI",
+      "isDevHub": false,
+      "instanceApiVersion": "63.0",
+      "instanceApiVersionLastRetrieved": "12/5/2025, 12:36:23"
+    }
+[12:57:43.119] [34mDEBUG[39m (sf:oclif:AuthInfoConfig):
+    0: "Result from merge"
+    1: {
+      "accessToken": "e601e5b4723563ca207742ccf4e07403c40621ce589a990094728a6b4b9be5b44fc54ed8a1b274b8314831b06077de8e19ccd9bbe8fbe1e68ef79e112e144c4448b4c844b0d38846be0df7d85772b45cdb4d50259d5de7d40f386699074bc8558759c38f72f211384c0152cda0e053a4099466fd40aa:54124e06d74e3b153db1c4f2b4aad9ec",
+      "instanceUrl": "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com",
+      "orgId": "00DWU00000MScgs2AD",
+      "username": "daniel.vadillo.1q@resilient-bear-1tkts2.com",
+      "loginUrl": "https://resilient-bear-1tkts2-dev-ed.trailblaze.my.salesforce.com/",
+      "refreshToken": "<refresh_token - HIDDEN>",
+      "clientId": "PlatformCLI",
+      "isDevHub": false,
+      "instanceApiVersion": "63.0",
+      "instanceApiVersionLastRetrieved": "12/5/2025, 12:36:23"
+    }
+[12:57:43.119] [90mTRACE[39m (sf:oclif:fileLocking.writeAndUnlock): [36mCreated 'sf:oclif:fileLocking.writeAndUnlock' child logger instance[39m
+[12:57:43.119] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:fileLocking.writeAndUnlock' logger instance[39m
+[12:57:43.119] [34mDEBUG[39m (sf:oclif:fileLocking.writeAndUnlock): [36mWriting to file: C:\Users\dani\.sfdx\daniel.vadillo.1q@resilient-bear-1tkts2.com.json[39m
+[12:57:43.121] [32mINFO[39m (sf:oclif:AuthInfo): [36mSaved auth info for username: daniel.vadillo.1q@resilient-bear-1tkts2.com[39m
+[12:57:43.127] [32mINFO[39m (sf:oclif:AuthInfo): [36mReturning fields for a connection using OAuth config.[39m
+[12:57:43.127] [90mTRACE[39m (sf:oclif:connection): [36mCreated 'sf:oclif:connection' child logger instance[39m
+[12:57:43.127] [90mTRACE[39m (sf:oclif): [36mSetup child 'sf:oclif:connection' logger instance[39m
+[12:57:43.127] [34mDEBUG[39m (sf:oclif:connection): [36mAPI version cache last checked on 12/5/2025, 12:36:23 (now is 12/5/2025, 12:57:43)[39m
+[12:57:43.127] [34mDEBUG[39m (sf:oclif:connection): [36mUsing cached API version: 63.0[39m
+[12:57:43.127] [34mDEBUG[39m (sf:oclif:connection): [36mConnection created with apiVersion 63.0[39m
+[12:57:43.737] [34mDEBUG[39m (sf:oclif:config): [36mstart postrun hook[39m
+[12:57:43.737] [34mDEBUG[39m (sf:oclif:config): [36mpostrun hook done[39m
+[12:57:43.742] [90mTRACE[39m (sf:oclif:perf): [36mCreated 'sf:oclif:perf' child logger instance[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mProcess Uptime: 2586.8828ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mOclif Time: 1965.0345ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mInit Time: 157.4787ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mConfig Load Time: 116.2903ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  • Root Plugin Load Time: 26.6950ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  • Plugins Load Time: 65.5684ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  • Commands Load Time: 17.9855ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mCore Plugin Load Time: 41.2576ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mUser Plugin Load Time: 3.0571ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mLinked Plugin Load Time: 0.0000ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mPlugin Load Times:[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-autocomplete: 31.9585ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-commands: 31.7264ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-help: 30.4865ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-not-found: 30.2527ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-plugins: 29.4758ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-search: 28.7333ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-update: 28.1415ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-data: 28.1322ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-version: 27.1872ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-packaging: 27.1241ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  root: 26.6950ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-warn-if-update-available: 26.6542ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @oclif/plugin-which: 26.1014ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-apex: 25.7322ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-deploy-retrieve: 25.5476ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-auth: 24.9713ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-api: 24.6135ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-org: 24.4744ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-settings: 24.0439ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-info: 23.5767ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-templates: 23.3909ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-limits: 23.3384ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-schema: 23.2374ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-sobject: 23.0856ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-marketplace: 22.4947ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-telemetry: 22.3611ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-trust: 20.2020ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-user: 19.7683ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  @salesforce/plugin-code-analyzer: 2.7526ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mHook Run Times:[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  init:[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    total: 156.7881ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    @oclif/plugin-update(./dist/hooks/init.js): 19.2785ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    @oclif/plugin-warn-if-update-available(./lib/hooks/init/check-update): 97.6729ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    @salesforce/plugin-settings(./lib/hooks/init/load_config_meta): 155.6318ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  prerun:[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    total: 46.8580ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    @salesforce/cli(./dist/hooks/prerun): 9.5150ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    @salesforce/plugin-telemetry(./lib/hooks/telemetryPrerun.js): 46.7604ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  preparse:[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    total: 3.2766ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    @salesforce/cli(/dist/hooks/preparse): 3.2092ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m  postrun:[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36m    total: 0.1064ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mCommand Load Time: 0.0000ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:perf): [36mCommand Run Time: 1807.2886ms[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:config): [36mstart finally hook[39m
+[12:57:43.742] [34mDEBUG[39m (sf:oclif:config): [36mfinally hook done[39m
+
+Command exit code: 0

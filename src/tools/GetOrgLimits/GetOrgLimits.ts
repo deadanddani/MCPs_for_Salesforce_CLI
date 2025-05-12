@@ -4,13 +4,11 @@ import { executeSync } from "../../helpers/CommandExecuter.js";
 import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 
 interface LimitValue {
-  Max: number;
-  Remaining: number;
-  Used?: number;
-}
-
-interface OrgLimits {
-  [key: string]: LimitValue;
+  max: number;
+  remaining: number;
+  remainingPercent?: String;
+  used?: number;
+  usedPercent?: String;
 }
 
 export const GetOrgLimits: Tool = {
@@ -59,5 +57,21 @@ function getDefaultErrorMessage(error: any): string {
 }
 
 function getOrgLimits(alias: string): string {
-  return executeSync(`sf limits:api:display --target-org ${alias} --json`);
+  const commandResult: string = executeSync(
+    `sf org list limits --target-org ${alias} --json`
+  );
+
+  const limits: LimitValue[] = JSON.parse(commandResult).result;
+  limits.forEach((limit) => {
+    limit = populateExtraLimitFields(limit);
+  });
+
+  return `Limits for ${alias} org: \n ${JSON.stringify(limits)}`;
+}
+
+function populateExtraLimitFields(limit: LimitValue): LimitValue {
+  limit.remainingPercent = (limit.remaining * 100) / limit.max + "%";
+  limit.used = limit.max - limit.remaining;
+  limit.usedPercent = (limit.used * 100) / limit.max + "%";
+  return limit;
 }

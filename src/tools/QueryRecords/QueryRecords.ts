@@ -33,10 +33,10 @@ function getRecords({ alias, query }: { alias: string; query: string }) {
   let resultMessage;
   try {
     resultMessage = executeSync(
-      `sf data query --target-org ${alias} --query "${query}"`
+      `sf data query --target-org ${alias} --query "${query}" --json`
     );
   } catch (error: any) {
-    const errorstring = error.tostring();
+    const errorstring = error.stdout;
     if (
       errorstring.includes("sObject type") ||
       errorstring.includes("No such column")

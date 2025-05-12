@@ -1,0 +1,4 @@
+2025-05-12T10:57:42.639Z sf:telemetry Usage acknowledgement file already exists
+2025-05-12T10:57:42.640Z sf:telemetry Using telemetry logging file C:\Users\dani\AppData\Local\Temp\sf-telemetry\telemetry-319224e707ae5bd215bbb563429184b753ecd8cd.log
+2025-05-12T10:57:42.643Z sf:telemetry Setting up process exit handler
+2025-05-12T10:57:43.778Z sf:telemetry Spawning "C:\Program Files\nodejs\node.exe C:\Users\dani\AppData\Roaming\npm\node_modules\@salesforce\cli\node_modules\@salesforce\plugin-telemetry\processes\upload.js C:\Users\dani\AppData\Local\sf C:\Users\dani\AppData\Local\Temp\sf-telemetry\telemetry-319224e707ae5bd215bbb563429184b753ecd8cd.log"

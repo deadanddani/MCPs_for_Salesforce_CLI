@@ -1,4 +1,3 @@
-import type { Result } from "../entities/Result.js";
 import which from "which";
 
 export function checkCliInstallation() {

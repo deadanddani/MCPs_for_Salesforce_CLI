@@ -1,7 +1,11 @@
 import { CommandError } from "../../entities/CommandError";
 import { IErrorType } from "./IErrorType";
 import { executeSync } from "../../helpers/CommandExecuter.js";
-import type { AliasResult } from "../../entities/AliasResult";
+
+type AliasResult = {
+  alias: string;
+  value: string;
+};
 
 export class AliasError implements IErrorType {
   error: CommandError;

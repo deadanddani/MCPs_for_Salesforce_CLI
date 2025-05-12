@@ -1,6 +1,5 @@
 import type { Tool } from "../../entities/Tool.js";
 import { executeSync } from "../../helpers/CommandExecuter.js";
-import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 
 export const ListOrgs: Tool = {
   name: "List_Orgs",
