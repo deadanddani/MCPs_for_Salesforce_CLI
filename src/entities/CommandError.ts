@@ -1,4 +1,4 @@
-export interface CommandError {
+export type CommandError = {
   name: string;
   message: string;
   exitCode: number;
@@ -10,4 +10,4 @@ export interface CommandError {
   code: string;
   status: number;
   commandName: string;
-} 
+};

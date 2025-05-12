@@ -1,5 +1,6 @@
 import type { Tool } from "../../entities/Tool.js";
 import { executeSync } from "../../helpers/CommandExecuter.js";
+import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 
 export const ListOrgs: Tool = {
   name: "List_Orgs",
@@ -19,9 +20,7 @@ export const ListOrgs: Tool = {
 function getOrgList() {
   let resultMessage;
   try {
-    resultMessage = executeSync(
-      "sf org list --all --json"
-    );
+    resultMessage = executeSync("sf org list --all --json");
   } catch (error) {
     resultMessage = `Error during the command execution ${error} let the user know why it failed`;
   }

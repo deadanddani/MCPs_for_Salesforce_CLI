@@ -1,6 +1,7 @@
 import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
+import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 
 export const QueryRecords: Tool = {
   name: "Query_Records",
@@ -42,7 +43,7 @@ function getRecords({ alias, query }: { alias: string; query: string }) {
     ) {
       resultMessage = `The query failed because the object or field does not exist, please ask the user to request to refresh the context`;
     } else {
-      resultMessage = `Error during the command execution ${errorstring} let the user know why it failed`;
+      resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
     }
   }
 
@@ -54,4 +55,10 @@ function getRecords({ alias, query }: { alias: string; query: string }) {
       },
     ],
   };
+}
+
+function getDefaultErrorMessage(error: any): string {
+  return `Error during the command execution: ${
+    error.stdout || error
+  }. let the user know why it failed.`;
 }

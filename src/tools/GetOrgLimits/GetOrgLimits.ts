@@ -1,6 +1,7 @@
 import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
+import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 
 interface LimitValue {
   Max: number;
@@ -34,11 +35,11 @@ export const GetOrgLimits: Tool = {
 };
 
 function getLimits({ alias }: { alias: string }) {
-  let resultMessage;
+  let resultMessage: string | null = null;
   try {
     resultMessage = getOrgLimits(alias);
   } catch (error: any) {
-    resultMessage = `Error retrieving org limits: ${error.message || error.toString()}. Please check if the org alias is correct and you have the necessary permissions.`;
+    resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
   }
 
   return {
@@ -51,8 +52,12 @@ function getLimits({ alias }: { alias: string }) {
   };
 }
 
+function getDefaultErrorMessage(error: any): string {
+  return `Error retrieving org limits: ${
+    error.stdout || error
+  }. Please check if the org alias is correct.`;
+}
+
 function getOrgLimits(alias: string): string {
-  return executeSync(
-    `sf limits:api:display --target-org ${alias} --json`
-  );
+  return executeSync(`sf limits:api:display --target-org ${alias} --json`);
 }

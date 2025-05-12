@@ -1,6 +1,7 @@
 import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
+import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 
 export const RefreshObjectsContext: Tool = {
   name: "Refresh_Objects_Context",
@@ -29,8 +30,7 @@ function getContext({ alias }: { alias: string }) {
   try {
     resultMessage = getObjectNames(alias);
   } catch (error: any) {
-    const errorstring = error.tostring();
-    resultMessage = `Error during the command execution ${errorstring} let the user know why it failed`;
+    resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
   }
 
   return {
@@ -41,6 +41,12 @@ function getContext({ alias }: { alias: string }) {
       },
     ],
   };
+}
+
+function getDefaultErrorMessage(error: any): string {
+  return `Error during the command execution: ${
+    error.stdout || error
+  }. let the user know why it failed.`;
 }
 
 function getObjectNames(alias: string): string {
