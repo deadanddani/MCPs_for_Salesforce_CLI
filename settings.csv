@@ -1,0 +1,15 @@
+key,value
+workbench.colorTheme,One Dark Pro Darker
+editor.fontFamily,Cascadia Code PL, monospace
+terminal.integrated.fontLigatures.enabled,true
+editor.fontLigatures,true
+workbench.productIconTheme,fluent-icons
+terminal.integrated.fontFamily,CaskaydiaCove Nerd Font
+editor.tabSize,2
+editor.formatOnSave,true
+editor.defaultFormatter,esbenp.prettier-vscode
+javascript.updateImportsOnFileMove.enabled,always
+mcp.servers.Salesforce.command,npx
+mcp.servers.Salesforce.args,-y;tsx;/Users/dani/Desktop/proyectos/testMCP/src/index.ts
+editor.codeActionsOnSave,{}
+editor.dropIntoEditor.preferences,[]

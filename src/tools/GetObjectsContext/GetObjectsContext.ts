@@ -3,10 +3,12 @@ import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 
-export const RefreshObjectsContext: Tool = {
-  name: "Refresh_Objects_Context",
+export const GetObjectsContext: Tool = {
+  name: "Get_Objects_Context",
   description:
-    "This tool is used when we are missing some custom or standar Object name ar the user request information related to object but not fields, this will return the full list of objects, that must be later use for future comands",
+    "This tool is used when we are missing some custom or standar Object " +
+    "name for example for user request or request for queries, this may be called before " +
+    "Get_Object_Schema and Query_Records this will return the full list of objects",
   inputSchema: {
     alias: z
       .string()

@@ -23,7 +23,7 @@ export class AliasError implements IErrorType {
     }
 
     let resultMessage: string =
-      "The alias provided is not valid let the user choose one of the following aliases: \n";
+      "The alias provided is not valid, choose one by context and rerun the failed tool, alias list: \n";
 
     aliases.forEach((aliasObject) => {
       resultMessage += ` Alias: ${aliasObject.alias},  URL: ${aliasObject.value} \n`;

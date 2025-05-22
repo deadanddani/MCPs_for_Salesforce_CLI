@@ -6,7 +6,13 @@ import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
 export const QueryRecords: Tool = {
   name: "Query_Records",
   description:
-    "This tool is used when the user request some information about specific records, if you are not sure of some information like object custom object names or fields ask the user to request to refresh the context, if the query return many records display only the number and ask the user to filter a bit",
+    "This tool is used when the user request some information about specific " +
+    "records but first you need to call the tools Get_Objects_Context and " +
+    "Get_Object_Schema to build the query, if you are not sure of some " +
+    "information like object custom object names or fields execute first those tools, " +
+    "so for example if the user request account with contact info first get all the objects context " +
+    "then the account schema then contact schema and the execute this. " +
+    "represent the result on a table format",
   inputSchema: {
     alias: z
       .string()
@@ -16,7 +22,7 @@ export const QueryRecords: Tool = {
     query: z
       .string()
       .describe(
-        "With the user request build a SOQL query to retrive the data, always select a limit depening on the esxpected number of object or user request by default put 200, if you are not sure about a field or object name ask the user to request to refresh the context, if the query is complex try to filter as much as posible and process the date on the result with the IA"
+        "With the user request, and the information extracted from the tool refresh object context of the affected objects, build a SOQL query to retrive the data, always select a limit depening on the esxpected number of object or user request by default put 200, if you are not sure about a field or object name ask the user to request to refresh the context, if the query is complex try to filter as much as posible and process the date on the result with the IA"
       ),
   },
   execute: getRecords,

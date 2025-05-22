@@ -7,7 +7,7 @@ import { killExistingProcesses } from "../../helpers/killExistingProcesses.js";
 export const authSF: Tool = {
   name: "Auth_Salesforce_Instance",
   description:
-    "Tool to authenticate to Salesforce Instance so the rest of the tools can be executed",
+    "Tool to authenticate to Salesforce Instance only execute it when the user explicitly ask for authenticate a new org or if he need to add a new org",
   inputSchema: {
     alias: z
       .string()
