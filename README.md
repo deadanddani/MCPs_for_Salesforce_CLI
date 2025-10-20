@@ -35,6 +35,16 @@ npx @modelcontextprotocol/inspector npx -y tsx src/index.ts
 
 This will start the inspector and load your local MCP using the `src/index.ts` file.
 
+## IMPORTANT — UAT-only safety notice
+
+⚠️ IMPORTANT: All tooling in this MCP must only be used against UAT environments. Change-deployments and test executions must NOT be run against Production organizations.
+
+- Deployments (e.g. `Deploy_Metadata`) and test runs (e.g. `Run_Tests`) must only target UAT environments. Always verify the target alias before running any destructive operation.
+- Use clear environment aliases that indicate UAT (for example: `uat-xxx`). Avoid aliases that point to production or that do not clearly identify the environment.
+- Always double-check the `alias` parameter and the org listed by `List_Orgs` before running commands that change data or metadata.
+
+Failure to follow this guidance may result in data loss or unwanted changes in production. When in doubt, authenticate to a UAT org and test there first.
+
 ## Configure Cursor (mcp-tools)
 
 If you want to add this MCP to Cursor for local development/debugging, add the following entry in the `mcp-tools` section of Cursor's configuration (adjust the path to `src/index.ts` on your machine):
@@ -62,7 +72,7 @@ Below is a quick reference of the available tools with a short description and a
 - List_Orgs — Lists authenticated orgs in the Salesforce CLI with useful metadata. See `docs/tools/ListOrgs.md`.
 - Get_Org_Limits — Retrieves current org limits (API calls, storage, etc.) and computes usage percentages. See `docs/tools/GetOrgLimits.md`.
 - Open_Org_Page — Opens the org page in the browser (optionally a specific source file, private mode). See `docs/tools/OpenOrgPage.md`.
-- Deploy_Metadata — Deploys metadata to a Developer org (use with caution). See `docs/tools/DeployMetadata.md`.
+- Deploy_Metadata — Deploys metadata to a UAT org (use with caution). See `docs/tools/DeployMetadata.md`.
 - Run_Tests — Runs Apex tests and returns results and coverage summaries. See `docs/tools/RunTests.md`.
 - Auth_Salesforce_Instance — Starts a web-login to authenticate a Salesforce org and create an alias. See `docs/tools/AuthSF.md`.
 

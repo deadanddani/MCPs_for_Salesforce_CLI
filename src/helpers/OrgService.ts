@@ -5,8 +5,7 @@ export function isDeveloperOrg(orgAlias: string): boolean {
   try {
     const orgInfo:OrgData = getOrgInfo(orgAlias);
     return orgInfo.instanceUrl.includes(".sandbox.my.salesforce.com") && 
-      !orgInfo.username.endsWith(".uat") &&
-      !orgInfo.username.endsWith(".develop");
+      !orgInfo.username.endsWith(".uat");
     
   } catch (error) {
     throw error;
