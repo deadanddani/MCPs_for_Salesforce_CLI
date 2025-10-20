@@ -52,3 +52,17 @@ Replace the path in `args` with the absolute path to your local `src/index.ts`.
 
 Each tool in the MCP has its own documentation file in `docs/tools/` (one file per tool) to avoid overloading this README. Check the files there to see what each tool does, its inputs and usage examples.
 
+## Tools
+
+Below is a quick reference of the available tools with a short description and a link to the full documentation (in `docs/tools/`).
+
+- Get_Objects_Context — Returns the list of standard and custom sObjects available in the target org. See `docs/tools/GetObjectsContext.md`.
+- Get_Object_Schema — Returns the schema/description of a specific sObject. See `docs/tools/GetObjectSchema.md`.
+- Query_Records — Executes a SOQL query against the target org and returns results. See `docs/tools/QueryRecords.md`.
+- List_Orgs — Lists authenticated orgs in the Salesforce CLI with useful metadata. See `docs/tools/ListOrgs.md`.
+- Get_Org_Limits — Retrieves current org limits (API calls, storage, etc.) and computes usage percentages. See `docs/tools/GetOrgLimits.md`.
+- Open_Org_Page — Opens the org page in the browser (optionally a specific source file, private mode). See `docs/tools/OpenOrgPage.md`.
+- Deploy_Metadata — Deploys metadata to a Developer org (use with caution). See `docs/tools/DeployMetadata.md`.
+- Run_Tests — Runs Apex tests and returns results and coverage summaries. See `docs/tools/RunTests.md`.
+- Auth_Salesforce_Instance — Starts a web-login to authenticate a Salesforce org and create an alias. See `docs/tools/AuthSF.md`.
+
