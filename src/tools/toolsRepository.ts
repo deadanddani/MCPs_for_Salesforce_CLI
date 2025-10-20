@@ -6,6 +6,8 @@ import { GetObjectSchema } from "./GetObjectSchema/GetObjectSchema.js";
 import { ListOrgs } from "./ListOrgs/ListOrgs.js";
 import { GetOrgLimits } from "./GetOrgLimits/GetOrgLimits.js";
 import { OpenOrgPage } from "./OpenOrgPage/OpenOrgPage.js";
+import { DeployMetadata } from "./DeployMetadata/DeployMetadata.js";
+import { RunTests } from "./RunTests/RunTests.js";
 
 export const tools: Tool[] = [
   authSF,
@@ -15,4 +17,6 @@ export const tools: Tool[] = [
   GetObjectSchema,
   GetOrgLimits,
   OpenOrgPage,
+  DeployMetadata,
+  RunTests
 ];

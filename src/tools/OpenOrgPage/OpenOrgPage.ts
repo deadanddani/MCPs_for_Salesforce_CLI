@@ -10,7 +10,7 @@ export const OpenOrgPage: Tool = {
     alias: z
       .string()
       .describe(
-        "Alias to be used to execute the following task this can be any name"
+        "Alias of the org to execute the command"
       ),
     sourceFile: z
       .string()
