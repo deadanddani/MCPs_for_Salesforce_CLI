@@ -33,7 +33,7 @@ function runTests({ alias, testClasses, classesToCover }: { alias: string; testC
     const classes = testClasses.join(",");
     resultMessage = executeSync(`sf apex run test --target-org ${alias} --class-names ${classes} --json --wait 30 --code-coverage`);
     if(resultMessage.length > 4000) {
-      cleanJSONResult(resultMessage);
+      resultMessage = cleanJSONResult(resultMessage);
       let result = JSON.parse(resultMessage);
       result.result.coverage.coverage = result.result.coverage.coverage.filter((item: { name: string; }) =>
         classesToCover.includes(item.name)
