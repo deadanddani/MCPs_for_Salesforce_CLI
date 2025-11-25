@@ -2,7 +2,7 @@ import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { cleanJSONResult } from "../../helpers/JSONService.js";
-import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
+import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
 import { isDeveloperOrg } from "../../helpers/OrgService.js";
 
 export const RunTests: Tool = {

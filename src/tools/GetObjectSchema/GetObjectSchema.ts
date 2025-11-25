@@ -1,7 +1,7 @@
 import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
-import { getMessage } from "../../genericErrorHandler/GenericErrorsHandler.js";
+import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
 
 export const GetObjectSchema: Tool = {
   name: "Get_Object_Schema",

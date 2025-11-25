@@ -23,6 +23,7 @@ These are the dependencies required for the project to run and develop properly:
 
 ```bash
 npm install
+npm install @salesforce/cli
 ```
 
 ## Run for testing

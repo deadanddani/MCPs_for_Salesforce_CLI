@@ -1,6 +1,6 @@
 import { CommandError } from "../../entities/CommandError";
 import { IErrorType } from "./IErrorType";
-import { executeSync } from "../../helpers/CommandExecuter.js";
+import { executeSync } from "../../CommandExecuter.js";
 
 type AliasResult = {
   alias: string;
