@@ -19,7 +19,7 @@ const mockedCheckCliInstallation = vi.mocked(checkCliInstallation);
 beforeEach(() => {
     mockedExecuteSync.mockReset();
     mockedCheckCliInstallation.mockReset();
-});
+}); 
 
 // --- TEST ---
 test("QueryRecords returns parsed records from executeSync response", () => {
