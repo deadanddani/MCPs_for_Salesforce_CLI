@@ -1,6 +1,6 @@
-import type { CommandError } from "../entities/CommandError";
-import { IErrorType } from "./errorTypes/IErrorType";
-import { AliasError } from "./errorTypes/AliasError";
+import type { CommandError } from "../../entities/CommandError.js";
+import { IErrorType } from "./errorTypes/IErrorType.js";
+import { AliasError } from "./errorTypes/AliasError.js";
 
 const errorTypes: Array<new (error: CommandError) => IErrorType> = [AliasError];
 
@@ -8,7 +8,7 @@ export function getMessage(errorUnformated: any): string | null {
   const error: CommandError | null = formatError(errorUnformated);
 
   if (error == null) {
-    return null;
+    return getDefaultErrorMessage(errorUnformated);
   }
 
   for (const errorType of errorTypes) {
@@ -19,7 +19,7 @@ export function getMessage(errorUnformated: any): string | null {
     }
   }
 
-  return null;
+  return getDefaultErrorMessage(errorUnformated);
 }
 
 function formatError(error: any): CommandError | null {
@@ -48,4 +48,10 @@ function formatError(error: any): CommandError | null {
 
 function isCommandError(error: any) {
   return error.stdout != null;
+}
+
+function getDefaultErrorMessage(error: any): string {
+  return `Error during the tool execution: ${
+    error.stdout || error
+  }. try to fix it or let the user know why it failed.`;
 }

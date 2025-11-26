@@ -1,5 +1,5 @@
-import { CommandError } from "../../entities/CommandError";
-import { IErrorType } from "./IErrorType";
+import { CommandError } from "../../../entities/CommandError.js";
+import { IErrorType } from "./IErrorType.js";
 import { executeSync } from "../../CommandExecuter.js";
 
 type AliasResult = {

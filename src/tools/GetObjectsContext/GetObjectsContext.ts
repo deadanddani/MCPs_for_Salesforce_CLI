@@ -2,6 +2,8 @@ import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
+import { cleanJSONResult } from "../../helpers/JSONService.js";
+import { checkCliInstallation } from "../../helpers/CliChecker.js";
 
 export const GetObjectsContext: Tool = {
   name: "Get_Objects_Context",
@@ -30,9 +32,10 @@ export const GetObjectsContext: Tool = {
 function getContext({ alias }: { alias: string }) {
   let resultMessage;
   try {
+    checkCliInstallation();
     resultMessage = getObjectNames(alias);
   } catch (error: any) {
-    resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
+    resultMessage = getMessage(error);
   }
 
   return {
@@ -43,12 +46,6 @@ function getContext({ alias }: { alias: string }) {
       },
     ],
   };
-}
-
-function getDefaultErrorMessage(error: any): string {
-  return `Error during the command execution: ${
-    error.stdout || error
-  }. let the user know why it failed.`;
 }
 
 function getObjectNames(alias: string): string {
@@ -62,7 +59,7 @@ function getObjects(alias: string, type: string): string[] {
   let stringResult: string = executeSync(
     `sf sobject list --sobject ${type} --target-org ${alias} --json`
   );
-  let resultObject: SfSObjectListResponse = JSON.parse(stringResult);
+  let resultObject: SfSObjectListResponse = JSON.parse(cleanJSONResult(stringResult));
   return resultObject.result;
 }
 

@@ -2,6 +2,7 @@ import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
+import { checkCliInstallation } from "../../helpers/CliChecker.js";
 
 export const OpenOrgPage: Tool = {
   name: "Open_Org_Page",
@@ -44,9 +45,10 @@ function getLimits({
 }) {
   let resultMessage: string | null = null;
   try {
+    checkCliInstallation();
     resultMessage = executeOpenCommand(alias, sourceFile, isPrivate);
   } catch (error: any) {
-    resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
+    resultMessage = getMessage(error);
   }
 
   return {
@@ -57,12 +59,6 @@ function getLimits({
       },
     ],
   };
-}
-
-function getDefaultErrorMessage(error: any): string {
-  return `Error opening org page: ${
-    error.stdout || error
-  }. Please check if the org alias is correct.`;
 }
 
 function executeOpenCommand(

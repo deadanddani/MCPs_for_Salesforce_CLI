@@ -1,5 +1,7 @@
 import type { Tool } from "../../entities/Tool.js";
+import { checkCliInstallation } from "../../helpers/CliChecker.js";
 import { executeSync } from "../../helpers/CommandExecuter.js";
+import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
 
 export const ListOrgs: Tool = {
   name: "List_Orgs",
@@ -19,9 +21,10 @@ export const ListOrgs: Tool = {
 function getOrgList() {
   let resultMessage;
   try {
+    checkCliInstallation();
     resultMessage = executeSync("sf org list --all --json");
   } catch (error) {
-    resultMessage = `Error during the command execution ${error} let the user know why it failed`;
+    resultMessage = getMessage(error);
   }
 
   return {

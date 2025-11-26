@@ -1,8 +1,9 @@
 import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
-import { execSync } from "child_process";
 import { checkCliInstallation } from "../../helpers/CliChecker.js";
 import { killExistingProcesses } from "../../helpers/killExistingProcesses.js";
+import { executeSync } from "../../helpers/CommandExecuter.js";
+import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
 
 export const authSF: Tool = {
   name: "Auth_Salesforce_Instance",
@@ -42,7 +43,7 @@ function authSFLogic({
     let message2 = Auth(alias, instanceUrl);
     message = `Authenticated to Salesforce Instance with alias ${alias} and instance URL ${instanceUrl} and message ${message2}`;
   } catch (error) {
-    message = `Authenticated to Salesforce Failed with the error: ${error}`;
+    message = getMessage(error);
   }
 
   return {
@@ -56,10 +57,14 @@ function authSFLogic({
 }
 
 function Auth(alias: string, instanceUrl: string) {
-  checkCliInstallation();
-  killExistingProcesses();
-
-  return execSync(
-    `sf org login web --alias ${alias} --set-default --instance-url ${instanceUrl}`
-  );
+    let resultMessage;
+    try {
+      checkCliInstallation();
+      killExistingProcesses();
+  
+      return executeSync(`sf org login web --alias ${alias} --set-default --instance-url ${instanceUrl}`);
+    } catch (error: any) {
+      throw error;
+    }
 }
+

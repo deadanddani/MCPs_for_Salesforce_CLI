@@ -2,6 +2,7 @@ import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
+import { checkCliInstallation } from "../../helpers/CliChecker.js";
 
 export const QueryRecords: Tool = {
   name: "Query_Records",
@@ -38,18 +39,20 @@ export const QueryRecords: Tool = {
 function getRecords({ alias, query }: { alias: string; query: string }) {
   let resultMessage;
   try {
+    checkCliInstallation();
+
     resultMessage = executeSync(
       `sf data query --target-org ${alias} --query "${query}" --json`
     );
   } catch (error: any) {
-    const errorstring = error.stdout;
+    const errorstring = error.stdout ?? '';
     if (
       errorstring.includes("sObject type") ||
       errorstring.includes("No such column")
     ) {
       resultMessage = `The query failed because the object or field does not exist, please ask the user to request to refresh the context`;
     } else {
-      resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
+      resultMessage = getMessage(error);
     }
   }
 
@@ -61,10 +64,4 @@ function getRecords({ alias, query }: { alias: string; query: string }) {
       },
     ],
   };
-}
-
-function getDefaultErrorMessage(error: any): string {
-  return `Error during the command execution: ${
-    error.stdout || error
-  }. let the user know why it failed.`;
 }

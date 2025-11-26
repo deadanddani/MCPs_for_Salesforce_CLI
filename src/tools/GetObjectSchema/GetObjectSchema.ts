@@ -2,6 +2,7 @@ import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
+import { checkCliInstallation } from "../../helpers/CliChecker.js";
 
 export const GetObjectSchema: Tool = {
   name: "Get_Object_Schema",
@@ -41,9 +42,10 @@ function getSchema({
 }) {
   let resultMessage;
   try {
+    checkCliInstallation();
     resultMessage = getObjectSchema(alias, objectName);
   } catch (error: any) {
-    resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
+    resultMessage = getMessage(error);
   }
 
   return {
@@ -60,10 +62,4 @@ function getObjectSchema(alias: string, objectName: string): string {
   return executeSync(
     `sf sobject describe --sobject ${objectName} --target-org ${alias}`
   );
-}
-
-function getDefaultErrorMessage(error: any): string {
-  return `Error during the command execution: ${
-    error.stdout || error
-  }. let the user know why it failed.`;
 }

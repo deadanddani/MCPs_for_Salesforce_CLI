@@ -2,6 +2,8 @@ import type { Tool } from "../../entities/Tool.js";
 import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
+import { checkCliInstallation } from "../../helpers/CliChecker.js";
+import { cleanJSONResult } from "../../helpers/JSONService.js";
 
 interface LimitValue {
   max: number;
@@ -35,9 +37,10 @@ export const GetOrgLimits: Tool = {
 function getLimits({ alias }: { alias: string }) {
   let resultMessage: string | null = null;
   try {
+    checkCliInstallation();
     resultMessage = getOrgLimits(alias);
   } catch (error: any) {
-    resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
+    resultMessage = getMessage(error);
   }
 
   return {
@@ -50,18 +53,12 @@ function getLimits({ alias }: { alias: string }) {
   };
 }
 
-function getDefaultErrorMessage(error: any): string {
-  return `Error retrieving org limits: ${
-    error.stdout || error
-  }. Please check if the org alias is correct.`;
-}
-
 function getOrgLimits(alias: string): string {
   const commandResult: string = executeSync(
     `sf org list limits --target-org ${alias} --json`
   );
 
-  const limits: LimitValue[] = JSON.parse(commandResult).result;
+  const limits: LimitValue[] = JSON.parse(cleanJSONResult(commandResult)).result;
   limits.forEach((limit) => {
     limit = populateExtraLimitFields(limit);
   });

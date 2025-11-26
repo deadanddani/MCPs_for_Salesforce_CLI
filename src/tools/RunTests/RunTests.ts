@@ -3,7 +3,8 @@ import { z } from "zod";
 import { executeSync } from "../../helpers/CommandExecuter.js";
 import { cleanJSONResult } from "../../helpers/JSONService.js";
 import { getMessage } from "../../helpers/genericErrorHandler/GenericErrorsHandler.js";
-import { isDeveloperOrg } from "../../helpers/OrgService.js";
+import { areCriticalCommandsAllowed } from "../../helpers/OrgService.js";
+import { checkCliInstallation } from "../../helpers/CliChecker.js";
 
 export const RunTests: Tool = {
   name: "Run_Tests",
@@ -26,22 +27,23 @@ export const RunTests: Tool = {
 function runTests({ alias, testClasses, classesToCover }: { alias: string; testClasses: string[]; classesToCover: string[] }) {
   let resultMessage;
   try {
-    if( !isDeveloperOrg(alias) ){
-      throw new Error("DeployMetadata tool can only be used on Developer orgs, not on Sandboxes or Production orgs.");
+    checkCliInstallation();
+    if(!areCriticalCommandsAllowed(alias) ){
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Running tests is disabled as is consider a critical command for this enviroment/Alias, because is production or a custom user rule tell him to check it on the MCP configuration on the .env file.`,
+          },
+        ],
+      };
     }
 
     const classes = testClasses.join(",");
     resultMessage = executeSync(`sf apex run test --target-org ${alias} --class-names ${classes} --json --wait 30 --code-coverage`);
-    if(resultMessage.length > 4000) {
-      resultMessage = cleanJSONResult(resultMessage);
-      let result = JSON.parse(resultMessage);
-      result.result.coverage.coverage = result.result.coverage.coverage.filter((item: { name: string; }) =>
-        classesToCover.includes(item.name)
-      );
-      resultMessage = 'Show a summary of the coverage percentage. this is the result:' + JSON.stringify(result);
-    }
+    resultMessage = reduceCoverageData(resultMessage, classesToCover);
   } catch (error: any) {
-    resultMessage = getMessage(error) ?? getDefaultErrorMessage(error);
+    resultMessage = getMessage(error);
   }
   return {
     content: [
@@ -52,9 +54,13 @@ function runTests({ alias, testClasses, classesToCover }: { alias: string; testC
     ],
   };
 }
-function getDefaultErrorMessage(error: any): any {
-  return `Error during the command execution: ${
-    error.stdout || error
-  }. let the user know why it failed.`;
+
+function reduceCoverageData(resultMessage: string, classesToCover: string[]): any {
+  resultMessage = cleanJSONResult(resultMessage);
+  let result = JSON.parse(resultMessage);
+  result.result.coverage.coverage = result.result.coverage.coverage.filter((item: { name: string; }) =>
+    classesToCover.includes(item.name)
+  );
+  return JSON.stringify(result);
 }
 
