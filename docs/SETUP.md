@@ -65,12 +65,6 @@ By default, these commands are only allowed on:
 
 > **Note:** The MCP automatically detects production orgs and is safe by default but you might not want to deploy to other orgs too.
 
-## Next Steps
-
-- 🧪 **[MCP_TOOLS_TESTING.md](./MCP_TOOLS_TESTING.md)** - Test the MCP tools interactively
-- 🖱️ **[CURSOR_SETUP.md](./CURSOR_SETUP.md)** - Configure the MCP in Cursor
-- 📚 **[Tools Documentation](./tools/)** - Learn about available tools
-
 ---
 
 [← Back to README](../README.md)

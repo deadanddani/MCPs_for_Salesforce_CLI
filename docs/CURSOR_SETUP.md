@@ -176,12 +176,6 @@ chmod +x /path/to/MCPs_for_Salesforce_CLI/build/index.js
 3. Verify your `.env` configuration
 4. Review Cursor's console for error messages
 
-## Next Steps
-
-- 📚 **[Tools Documentation](./tools/)** - Learn what each tool can do
-- 🧪 **[MCP_TOOLS_TESTING.md](./MCP_TOOLS_TESTING.md)** - Test the MCP locally
-- 💡 Experiment with different prompts to discover what the AI can do!
-
 ---
 
 [← Back to README](../README.md)

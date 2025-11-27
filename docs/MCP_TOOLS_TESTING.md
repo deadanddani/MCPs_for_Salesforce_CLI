@@ -105,12 +105,6 @@ DEBUG=* npx @modelcontextprotocol/inspector npx -y tsx src/index.ts
 - Solution: Check your `.env` configuration (see [SETUP.md](./SETUP.md))
 - Make sure you're using a sandbox/developer org
 
-## Next Steps
-
-- 🧪 **[CODE_TESTING.md](./CODE_TESTING.md)** - Run unit tests for the codebase
-- 🖱️ **[CURSOR_SETUP.md](./CURSOR_SETUP.md)** - Use the MCP in Cursor
-- 📚 **[Tools Documentation](./tools/)** - Detailed documentation for each tool
-
 ---
 
 [← Back to README](../README.md)

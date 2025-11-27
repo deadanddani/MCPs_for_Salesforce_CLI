@@ -277,12 +277,6 @@ When contributing:
 4. Ensure tests pass: `npm test`
 5. Follow TypeScript best practices
 
-## Next Steps
-
-- 🧪 **[CODE_TESTING.md](./CODE_TESTING.md)** - Learn about testing the codebase
-- 🛠️ **[SETUP.md](./SETUP.md)** - Setup and installation instructions
-- 📚 **[Tools Documentation](./tools/)** - Understand each tool's implementation
-
 ---
 
 [← Back to README](../README.md)
