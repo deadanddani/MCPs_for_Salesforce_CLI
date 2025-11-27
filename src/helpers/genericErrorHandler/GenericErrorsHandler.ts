@@ -27,7 +27,12 @@ function formatError(error: any): CommandError | null {
     return null;
   }
 
-  const errorMessage = JSON.parse(error.stdout);
+  try {
+    const errorMessage = JSON.parse(error.stdout);
+  } catch {
+    // Not a JSON error message
+    return null;
+  }
 
   const commandError: CommandError = {
     name: errorMessage.name,

@@ -28,7 +28,6 @@ function isDisallowedByUsername(orgInfo: OrgData): boolean {
   const orgUsername = orgInfo.username.toLowerCase();
   const disallowedUsernamesEnv = process.env.DISALLOW_CRITICAL_COMMANDS_TO_USERNAMES || "";
   const disallowedUsernames = disallowedUsernamesEnv.split(";").map(username => username.toLowerCase().trim());
-  console.log(`Checking if org username '${orgUsername}' is in disallowed usernames: [${disallowedUsernames.join(", ")}]`);
   return disallowedUsernames.includes(orgUsername);
 }
 

@@ -15,8 +15,6 @@ export function killExistingProcesses() {
       execSync(cmd);
     }
   } catch (error) {
-    // Silently fail if no processes are found or if there's an error
-    // This is expected behavior as there might not be any processes to kill
-    console.debug('No processes found on port', defaultPort);
+    //No processes found on port
   }
 }
