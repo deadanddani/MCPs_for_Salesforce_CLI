@@ -185,7 +185,11 @@ Coverage reports are generated in the `coverage/` directory (ignored by git).
 
 ## Next Steps
 
-- 🧪 See [MCP_TOOLS_TESTING.md](./MCP_TOOLS_TESTING.md) to test the MCP tools interactively
-- 📖 See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) to understand the codebase organization
-- 🛠️ Check existing test files in `src/tools/*/` for examples
+- 🧪 **[MCP_TOOLS_TESTING.md](./MCP_TOOLS_TESTING.md)** - Test the MCP tools interactively
+- 🏗️ **[PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md)** - Understand the codebase organization
+- 📚 **[Tools Documentation](./tools/)** - Check existing test files for examples
+
+---
+
+[← Back to README](../README.md)
 

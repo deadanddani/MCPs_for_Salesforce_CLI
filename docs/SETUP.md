@@ -67,7 +67,11 @@ By default, these commands are only allowed on:
 
 ## Next Steps
 
-- 📝 See [MCP_TOOLS_TESTING.md](./MCP_TOOLS_TESTING.md) to learn how to test the MCP locally
-- 🖱️ See [CURSOR_SETUP.md](./CURSOR_SETUP.md) to configure the MCP in Cursor
-- 📚 Check the [tools documentation](../docs/tools/) to learn about available tools
+- 🧪 **[MCP_TOOLS_TESTING.md](./MCP_TOOLS_TESTING.md)** - Test the MCP tools interactively
+- 🖱️ **[CURSOR_SETUP.md](./CURSOR_SETUP.md)** - Configure the MCP in Cursor
+- 📚 **[Tools Documentation](./tools/)** - Learn about available tools
+
+---
+
+[← Back to README](../README.md)
 

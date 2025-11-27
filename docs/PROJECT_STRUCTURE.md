@@ -279,7 +279,11 @@ When contributing:
 
 ## Next Steps
 
-- 📖 See [CODE_TESTING.md](./CODE_TESTING.md) to learn about testing
-- 🛠️ See [SETUP.md](./SETUP.md) for setup instructions
-- 📚 Check [tools documentation](./tools/) to understand each tool
+- 🧪 **[CODE_TESTING.md](./CODE_TESTING.md)** - Learn about testing the codebase
+- 🛠️ **[SETUP.md](./SETUP.md)** - Setup and installation instructions
+- 📚 **[Tools Documentation](./tools/)** - Understand each tool's implementation
+
+---
+
+[← Back to README](../README.md)
 

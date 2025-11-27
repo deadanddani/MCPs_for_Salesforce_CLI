@@ -107,7 +107,11 @@ DEBUG=* npx @modelcontextprotocol/inspector npx -y tsx src/index.ts
 
 ## Next Steps
 
-- 🧪 See [CODE_TESTING.md](./CODE_TESTING.md) to run unit tests for the codebase
-- 🖱️ See [CURSOR_SETUP.md](./CURSOR_SETUP.md) to use the MCP in Cursor
-- 📚 Check the [tools documentation](./tools/) for detailed tool information
+- 🧪 **[CODE_TESTING.md](./CODE_TESTING.md)** - Run unit tests for the codebase
+- 🖱️ **[CURSOR_SETUP.md](./CURSOR_SETUP.md)** - Use the MCP in Cursor
+- 📚 **[Tools Documentation](./tools/)** - Detailed documentation for each tool
+
+---
+
+[← Back to README](../README.md)
 
