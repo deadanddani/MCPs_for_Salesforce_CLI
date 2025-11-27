@@ -1,69 +1,57 @@
-## 📦 Dependencies
+# Salesforce CLI MCP (Model Context Protocol)
 
-These are the dependencies required for the project to run and develop properly:
+> 🚀 A powerful MCP server that brings Salesforce CLI capabilities to AI assistants like Cursor.
 
-### 🔧 Main dependencies (`dependencies`)
+This project provides a Model Context Protocol (MCP) server that enables AI assistants to interact with Salesforce organizations through the Salesforce CLI. It exposes various Salesforce operations as tools that can be used by AI models to query data, inspect metadata, deploy changes, run tests, and more.
 
-| Package                     | Description                                                                  |
-| --------------------------- | ---------------------------------------------------------------------------- |
-| `@modelcontextprotocol/sdk` | Official SDK for the ModelContext protocol, useful for specific integrations |
-| `@salesforce/cli`           | Salesforce CLI, required to run `sf` commands programmatically               |
-| `zod`                       | Library for validation and schema definition in TypeScript                   |
+## 🎯 What is this?
 
-### 🛠️ Development dependencies (`devDependencies`)
+This MCP server provides a comprehensive set of tools that enable AI assistants to autonomously integrate with Salesforce organizations and iteratively solve complex tasks. Acting as a bridge between AI (like Cursor) and your Salesforce orgs, it hepls with:
 
-| Package       | Description                                        |
-| ------------- | -------------------------------------------------- |
-| `typescript`  | TypeScript language support                        |
-| `@types/node` | Type definitions for using Node.js with TypeScript |
+- 📊 Query Salesforce data using natural language
+- 🔍 Inspect org schemas and metadata
+- 📦 Deploy metadata to Salesforce orgs
+- ✅ Run Apex tests and view coverage
+- 🔐 Authenticate and manage multiple orgs
+- 📈 Check org limits and usage
+- 🤖 Iterate and chain multiple operations to solve complex tasks autonomously
 
----
+## 🚀 Quick Start
 
-💡 **Note:** To install all dependencies, run:
+1. **[Setup Guide](./docs/SETUP.md)** - Install dependencies, Salesforce CLI, and configure environment
+2. **[MCP Tools Testing](./docs/MCP_TOOLS_TESTING.md)** - Test the MCP tools interactively with the MCP Inspector
+3. **[Cursor Setup](./docs/CURSOR_SETUP.md)** - Configure and use in Cursor
 
-```bash
-npm install
-npm install @salesforce/cli
-```
+## 📚 Available Tools
 
-## Run for testing
+This MCP provides the following tools:
 
-To run the application in test mode (without publishing a package), you can use the Model Context Protocol inspector and run the TypeScript entrypoint directly with `tsx`:
+| Tool | Description | Documentation |
+|------|-------------|---------------|
+| **Auth_Salesforce_Instance** | Authenticate a new Salesforce org | [📖 docs/tools/AuthSF.md](./docs/tools/AuthSF.md) |
+| **List_Orgs** | List all authenticated Salesforce orgs | [📖 docs/tools/ListOrgs.md](./docs/tools/ListOrgs.md) |
+| **Get_Objects_Context** | Get list of standard and custom objects | [📖 docs/tools/GetObjectsContext.md](./docs/tools/GetObjectsContext.md) |
+| **Get_Object_Schema** | Get schema/fields for a specific object | [📖 docs/tools/GetObjectSchema.md](./docs/tools/GetObjectSchema.md) |
+| **Query_Records** | Execute SOQL queries | [📖 docs/tools/QueryRecords.md](./docs/tools/QueryRecords.md) |
+| **Get_Org_Limits** | Check API limits and storage usage | [📖 docs/tools/GetOrgLimits.md](./docs/tools/GetOrgLimits.md) |
+| **Open_Org_Page** | Open org in browser (optionally specific page) | [📖 docs/tools/OpenOrgPage.md](./docs/tools/OpenOrgPage.md) |
+| **Deploy_Metadata** | Deploy metadata to a Developer org | [📖 docs/tools/DeployMetadata.md](./docs/tools/DeployMetadata.md) |
+| **Run_Tests** | Run Apex tests and get coverage | [📖 docs/tools/RunTests.md](./docs/tools/RunTests.md) |
 
-```
-npx @modelcontextprotocol/inspector npx -y tsx src/index.ts
-```
+## 🛠️ Development
 
-This will start the inspector and load your local MCP using the `src/index.ts` file.
+For developers who want to contribute or understand the codebase:
 
-## Configure Cursor (mcp-tools)
+- **[Project Structure](./docs/PROJECT_STRUCTURE.md)** - Architecture and organization of the project
+- **[Code Testing Guide](./docs/CODE_TESTING.md)** - Run unit tests and write new tests
+- **[MCP Tools Testing](./docs/MCP_TOOLS_TESTING.md)** - Test MCP tools interactively with MCP Inspector
 
-If you want to add this MCP to Cursor for local development/debugging, add the following entry in the `mcp-tools` section of Cursor's configuration (adjust the path to `src/index.ts` on your machine):
+## 🤝 Contributing
 
-```
-"mcp-salesforce-cli": {
-  "command": "npx",
-  "args": ["tsx", "/Users/danielvadillorand/Documents/Proyects/MCPs_for_Salesforce_CLI/src/index.ts"]
-}
-```
+This is an open-source project. Contributions are welcome!
 
-Replace the path in `args` with the absolute path to your local `src/index.ts`.
+## 📝 License
 
-## Tool documentation
+ISC
 
-Each tool in the MCP has its own documentation file in `docs/tools/` (one file per tool) to avoid overloading this README. Check the files there to see what each tool does, its inputs and usage examples.
-
-## Tools
-
-Below is a quick reference of the available tools with a short description and a link to the full documentation (in `docs/tools/`).
-
-- Get_Objects_Context — Returns the list of standard and custom sObjects available in the target org. See `docs/tools/GetObjectsContext.md`.
-- Get_Object_Schema — Returns the schema/description of a specific sObject. See `docs/tools/GetObjectSchema.md`.
-- Query_Records — Executes a SOQL query against the target org and returns results. See `docs/tools/QueryRecords.md`.
-- List_Orgs — Lists authenticated orgs in the Salesforce CLI with useful metadata. See `docs/tools/ListOrgs.md`.
-- Get_Org_Limits — Retrieves current org limits (API calls, storage, etc.) and computes usage percentages. See `docs/tools/GetOrgLimits.md`.
-- Open_Org_Page — Opens the org page in the browser (optionally a specific source file, private mode). See `docs/tools/OpenOrgPage.md`.
-- Deploy_Metadata — Deploys metadata to a Developer org (use with caution). See `docs/tools/DeployMetadata.md`.
-- Run_Tests — Runs Apex tests and returns results and coverage summaries. See `docs/tools/RunTests.md`.
-- Auth_Salesforce_Instance — Starts a web-login to authenticate a Salesforce org and create an alias. See `docs/tools/AuthSF.md`.
-
+Made with ❤️ for the Salesforce community
