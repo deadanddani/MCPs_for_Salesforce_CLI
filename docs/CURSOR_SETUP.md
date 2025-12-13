@@ -14,17 +14,7 @@ Cursor can connect to Model Context Protocol (MCP) servers to extend the AI's ca
 
 ## Configuration Steps
 
-### 1. Build the Project
-
-First, make sure the project is built:
-
-```bash
-npm run build
-```
-
-This creates the compiled output in the `build/` directory.
-
-### 2. Find Cursor's MCP Configuration
+### 1. Find Cursor's MCP Configuration
 
 The configuration file location depends on your operating system:
 
@@ -33,7 +23,8 @@ The configuration file location depends on your operating system:
 
 If the file doesn't exist, create it.
 
-### 3. Add the MCP Configuration
+
+### 2. Add the MCP Configuration
 
 Add the following entry to the `mcp-tools` section of the configuration file:
 
@@ -41,8 +32,8 @@ Add the following entry to the `mcp-tools` section of the configuration file:
 {
   "mcpServers": {
     "mcp-salesforce-cli": {
-      "command": "node",
-      "args": ["/ABSOLUTE/PATH/TO/MCPs_for_Salesforce_CLI/build/index.js"]
+      "command": "npx",
+      "args": ["-y", "tsx", "/ABSOLUTE/PATH/TO/MCPs_for_Salesforce_CLI/src/index.ts"]
     }
   }
 }
@@ -55,8 +46,8 @@ Add the following entry to the `mcp-tools` section of the configuration file:
 {
   "mcpServers": {
     "mcp-salesforce-cli": {
-      "command": "node",
-      "args": ["/Users/yourname/Documents/MCPs_for_Salesforce_CLI/build/index.js"]
+      "command": "npx",
+      "args": ["-y", "tsx", "/Users/yourname/Documents/MCPs_for_Salesforce_CLI/src/index.ts"]
     }
   }
 }
@@ -67,34 +58,14 @@ Add the following entry to the `mcp-tools` section of the configuration file:
 {
   "mcpServers": {
     "mcp-salesforce-cli": {
-      "command": "node",
-      "args": ["C:\\Users\\yourname\\Documents\\MCPs_for_Salesforce_CLI\\build\\index.js"]
-    }
-  }
-}
-```
-
-### 4. Alternative: Development Mode (TypeScript)
-
-If you're actively developing and want to use TypeScript directly without building:
-
-```json
-{
-  "mcpServers": {
-    "mcp-salesforce-cli": {
       "command": "npx",
-      "args": ["tsx", "/ABSOLUTE/PATH/TO/MCPs_for_Salesforce_CLI/src/index.ts"]
+      "args": ["-y", "tsx", "C:\\Users\\yourname\\Documents\\MCPs_for_Salesforce_CLI\\src\\index.ts"]
     }
   }
 }
 ```
 
-This is useful for:
-- Quick iteration during development
-- Testing changes without rebuilding
-- Debugging TypeScript source directly
-
-### 5. Restart Cursor
+### 3. Restart Cursor
 
 After adding the configuration:
 1. Save the `mcp.json` file
@@ -158,16 +129,17 @@ The AI will automatically use the appropriate MCP tools to fulfill your requests
 
 **Common issues:**
 1. **Wrong path:** Verify the absolute path in your config
-2. **Build not found:** Run `npm run build` to create the `build/` directory
-3. **Node not in PATH:** Ensure Node.js is accessible from the command line
+2. **Node not in PATH:** Ensure Node.js is accessible from the command line
 
 ### Permission Issues (macOS/Linux)
 
-If you get permission errors, ensure the build file is executable:
+If you get permission errors, try running the command manually in your terminal to accept any npx prompts, or ensure you have permissions to run node/npx.
 
-```bash
-chmod +x /path/to/MCPs_for_Salesforce_CLI/build/index.js
-```
+
+### Environment Issues
+
+If you see errors related to environment variables, you can optionally create a `.env` file for advanced configuration (like blocking checks), but it is **not required** for basic usage.
+
 
 ### MCP Crashes or Errors
 

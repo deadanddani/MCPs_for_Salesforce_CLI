@@ -6,7 +6,7 @@ This project provides a Model Context Protocol (MCP) server that enables AI assi
 
 ## 🎯 What is this?
 
-This MCP server provides a comprehensive set of tools that enable AI assistants to autonomously integrate with Salesforce organizations and iteratively solve complex tasks. Acting as a bridge between AI (like Cursor) and your Salesforce orgs, it hepls with:
+This MCP server provides a comprehensive set of tools that enable AI assistants to autonomously integrate with Salesforce organizations and iteratively solve complex tasks. Acting as a bridge between AI (like Cursor or VS Code Copilot) and your Salesforce orgs, it hepls with:
 
 - 📊 Query Salesforce data using natural language
 - 🔍 Inspect org schemas and metadata
@@ -21,6 +21,7 @@ This MCP server provides a comprehensive set of tools that enable AI assistants 
 1. **[Setup Guide](./docs/SETUP.md)** - Install dependencies, Salesforce CLI, and configure environment
 2. **[MCP Tools Testing](./docs/MCP_TOOLS_TESTING.md)** - Test the MCP tools interactively with the MCP Inspector
 3. **[Cursor Setup](./docs/CURSOR_SETUP.md)** - Configure and use in Cursor
+4. **[VS Code Setup](./docs/VSCODE_SETUP.md)** - Configure and use in VS Code (CoPilot)
 
 ## 📚 Available Tools
 
