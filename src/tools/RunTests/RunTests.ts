@@ -16,7 +16,7 @@ export const RunTests: Tool = {
   },
   execute: runTests,
   annotations: {
-  title: "Run tests in Salesforce",
+    title: "Run tests in Salesforce",
     readOnlyHint: false,
     destructiveHint: false,
     idempotentHint: true,
@@ -28,7 +28,7 @@ function runTests({ alias, testClasses, classesToCover }: { alias: string; testC
   let resultMessage;
   try {
     checkCliInstallation();
-    if(!areCriticalCommandsAllowed(alias) ){
+    if (!areCriticalCommandsAllowed(alias)) {
       return {
         content: [
           {
@@ -43,7 +43,11 @@ function runTests({ alias, testClasses, classesToCover }: { alias: string; testC
     resultMessage = executeSync(`sf apex run test --target-org ${alias} --class-names ${classes} --json --wait 30 --code-coverage`);
     resultMessage = reduceCoverageData(resultMessage, classesToCover);
   } catch (error: any) {
-    resultMessage = getMessage(error);
+    if (isTestExecutionError(error.stdout)) {
+      resultMessage = reduceCoverageData(error.stdout, classesToCover);
+    } else {
+      resultMessage = getMessage(error);
+    }
   }
   return {
     content: [
@@ -62,5 +66,13 @@ function reduceCoverageData(resultMessage: string, classesToCover: string[]): an
     classesToCover.includes(item.name)
   );
   return JSON.stringify(result);
+}
+
+function isTestExecutionError(error: string): boolean {
+  let errorMessage = cleanJSONResult(error);
+  const errorMessageReduced = errorMessage.slice(0, 100);
+
+  const match = errorMessageReduced.match(/"status"\s*:\s*100/);
+  return !!match;
 }
 
