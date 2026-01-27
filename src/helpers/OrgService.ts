@@ -19,7 +19,7 @@ export function areCriticalCommandsAllowed(orgAlias: string): boolean {
 export function getOrgInfo(orgAlias: string): OrgData {
   let result: OrgResponse;
   let resultMessage: string = executeSync(`sf org display --target-org ${orgAlias} --json`);
-  cleanJSONResult(resultMessage);
+  resultMessage = cleanJSONResult(resultMessage);
   result = JSON.parse(resultMessage);
   return result.result;
 }

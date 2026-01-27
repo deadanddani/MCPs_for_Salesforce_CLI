@@ -43,8 +43,9 @@ function runTests({ alias, testClasses, classesToCover }: { alias: string; testC
     resultMessage = executeSync(`sf apex run test --target-org ${alias} --class-names ${classes} --json --wait 30 --code-coverage`);
     resultMessage = reduceCoverageData(resultMessage, classesToCover);
   } catch (error: any) {
-    if (isTestExecutionError(error.stdout)) {
-      resultMessage = reduceCoverageData(error.stdout, classesToCover);
+    const stdout = error?.stdout;
+    if (typeof stdout === "string" && isTestExecutionError(stdout)) {
+      resultMessage = reduceCoverageData(stdout, classesToCover);
     } else {
       resultMessage = getMessage(error);
     }
@@ -69,7 +70,8 @@ function reduceCoverageData(resultMessage: string, classesToCover: string[]): an
 }
 
 function isTestExecutionError(error: string): boolean {
-  let errorMessage = cleanJSONResult(error);
+  if (typeof error !== "string") return false;
+  const errorMessage = cleanJSONResult(error);
   const errorMessageReduced = errorMessage.slice(0, 100);
 
   const match = errorMessageReduced.match(/"status"\s*:\s*100/);
