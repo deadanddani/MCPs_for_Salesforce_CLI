@@ -51,4 +51,3 @@ function deployMetadata({ alias,projectPath , metadataPath }: { alias: string; p
     ],
   };
 }
-

@@ -12,7 +12,8 @@ export const RunTests: Tool = {
   inputSchema: {
     alias: z.string().describe("Target organization's alias."),
     testClasses: z.array(z.string()).describe("List of test class names to run."),
-    classesToCover: z.array(z.string()).describe("List of test class names to cover, add always the classes that the tests provided cover, this will be the only coverage information returned the rest will be skiped."),
+    returnCoverage: z.boolean().describe("Whether to return code coverage information or not, by default does not return coverage unless the user specify it or there is an error and you need to know the lines affected"),
+    classesToCover: z.array(z.string()).describe("If returnCoverage is true, this list specifies which classes to include in the coverage report."),
   },
   execute: runTests,
   annotations: {
@@ -24,7 +25,7 @@ export const RunTests: Tool = {
   },
 };
 
-function runTests({ alias, testClasses, classesToCover }: { alias: string; testClasses: string[]; classesToCover: string[] }) {
+function runTests({ alias, testClasses, returnCoverage, classesToCover }: { alias: string; testClasses: string[]; returnCoverage: boolean; classesToCover: string[] }) {
   let resultMessage;
   try {
     checkCliInstallation();
@@ -40,12 +41,24 @@ function runTests({ alias, testClasses, classesToCover }: { alias: string; testC
     }
 
     const classes = testClasses.join(",");
-    resultMessage = executeSync(`sf apex run test --target-org ${alias} --class-names ${classes} --json --wait 30 --code-coverage`);
-    resultMessage = reduceCoverageData(resultMessage, classesToCover);
+    let command = `sf apex run test --target-org ${alias} --class-names ${classes} --json --wait 30`;
+    if (returnCoverage) {
+      command += " --code-coverage";
+    }
+    resultMessage = executeSync(command);
+    console.error("Raw command output:", resultMessage);
+    if (returnCoverage) {
+      resultMessage = reduceCoverageData(resultMessage, classesToCover);
+    }
   } catch (error: any) {
+    console.error("Error executing tests:", error);
     const stdout = error?.stdout;
     if (typeof stdout === "string" && isTestExecutionError(stdout)) {
-      resultMessage = reduceCoverageData(stdout, classesToCover);
+      if (returnCoverage) {
+        resultMessage = reduceCoverageData(stdout, classesToCover);
+      } else {
+        resultMessage = cleanJSONResult(stdout);
+      }
     } else {
       resultMessage = getMessage(error);
     }
@@ -63,9 +76,14 @@ function runTests({ alias, testClasses, classesToCover }: { alias: string; testC
 function reduceCoverageData(resultMessage: string, classesToCover: string[]): any {
   resultMessage = cleanJSONResult(resultMessage);
   let result = JSON.parse(resultMessage);
-  result.result.coverage.coverage = result.result.coverage.coverage.filter((item: { name: string; }) =>
-    classesToCover.includes(item.name)
-  );
+
+  // Only filter coverage data if it exists
+  if (result?.result?.coverage?.coverage) {
+    result.result.coverage.coverage = result.result.coverage.coverage.filter((item: { name: string; }) =>
+      classesToCover.includes(item.name)
+    );
+  }
+
   return JSON.stringify(result);
 }
 

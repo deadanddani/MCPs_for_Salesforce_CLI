@@ -7,6 +7,7 @@ async function debug() {
     const testInput = {
         alias: "DevVadillo", // Replace with your target Org Alias
         testClasses: ["PaymentWebhookTest"], // Replace with actual test class names
+        returnCoverage: false,
         classesToCover: ["PaymentWebhook"], // Replace with actual class names to check coverage for
     };
 

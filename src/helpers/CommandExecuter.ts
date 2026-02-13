@@ -7,9 +7,13 @@ export function executeSync(command: string): string {
     shell: true,
     stdio: 'pipe'
   });
-  
+
   if(result.status !== 0) {
-    throw new Error(`Command failed with status ${result.status} and message: ${result.stderr}`);
+    const error: any = new Error(`Command failed with status ${result.status} and message: ${result.stderr}`);
+    error.stdout = result.stdout;
+    error.stderr = result.stderr;
+    error.status = result.status;
+    throw error;
   }
 
   return result.stdout ? result.stdout : result.stderr;
