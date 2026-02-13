@@ -71,17 +71,39 @@ test("QueryRecords cli not installed", () => {
 });
 
 test("QueryRecords handles 'sObject type' error gracefully", () => {
-    const errorResponse = {
-        stdout: "Error: sObject type 'CustomObject__c' is not supported."
-    };
+    const error: any = new Error("Command failed");
+    error.stdout = "Error: sObject type 'CustomObject__c' is not supported.";
+    error.stderr = "";
+    error.status = 1;
 
     mockedExecuteSync.mockImplementation(() => {
-        throw errorResponse;
+        throw error;
     });
 
     const result = QueryRecords.execute({
         alias: "testDev",
         query: "SELECT Id FROM CustomObject__c"
+    });
+
+    expect(result).toBeDefined();
+    expect(result.content[0].text).toContain(
+        "The query failed because the object or field does not exist, please ask the user to request to refresh the context"
+    );
+});
+
+test("QueryRecords handles 'No such column' error gracefully", () => {
+    const error: any = new Error("Command failed");
+    error.stdout = "Error: No such column 'InvalidField' on entity 'Account'.";
+    error.stderr = "";
+    error.status = 1;
+
+    mockedExecuteSync.mockImplementation(() => {
+        throw error;
+    });
+
+    const result = QueryRecords.execute({
+        alias: "testDev",
+        query: "SELECT Id, InvalidField FROM Account"
     });
 
     expect(result).toBeDefined();

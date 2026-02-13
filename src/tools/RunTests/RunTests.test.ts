@@ -54,6 +54,7 @@ test("Run tests successfully", () => {
     const result = RunTests.execute({
         alias: "test",
         testClasses: ["TestClass1", "TestClass2"],
+        returnCoverage: true,
         classesToCover: ["TestClass1"]
     });
 
@@ -80,7 +81,11 @@ test("Handle error during test execution", () => {
     mockedAreCriticalCommandsAllowed.mockReturnValue(true);
     mockedCheckCliInstallation.mockImplementation(() => {});
     mockedExecuteSync.mockImplementation(() => {
-        throw new Error("Test execution failed.");
+        const error: any = new Error("Test execution failed.");
+        error.stdout = "";
+        error.stderr = "Test execution failed.";
+        error.status = 1;
+        throw error;
     });
 
     const result = RunTests.execute({
@@ -107,4 +112,93 @@ test("Handle CLI not installed", () => {
 
     expect(result).toBeDefined();
     expect(result.content[0].text).toContain("Salesforce CLI is not installed.");
+});
+
+test("Handle test failure with status 100 without coverage", () => {
+    const testFailureResult = JSON.stringify({
+        status: 100,
+        result: {
+            summary: {
+                outcome: "Failed",
+                testsRan: 1,
+                passing: 0,
+                failing: 1
+            },
+            tests: [{
+                FullName: "PaymentWebhookTest.testFailure",
+                Outcome: "Fail",
+                Message: "System.AssertException: Assertion Failed",
+                StackTrace: "Class.PaymentWebhookTest.testFailure: line 10, column 1"
+            }]
+        }
+    });
+
+    mockedAreCriticalCommandsAllowed.mockReturnValue(true);
+    mockedCheckCliInstallation.mockImplementation(() => {});
+    mockedCleanJSONResult.mockImplementation((input) => input);
+    mockedExecuteSync.mockImplementation(() => {
+        const error: any = new Error("Command failed with status 100");
+        error.stdout = testFailureResult;
+        error.stderr = "Warning: @salesforce/cli update available from 2.119.8 to 2.121.7.";
+        error.status = 100;
+        throw error;
+    });
+
+    const result = RunTests.execute({
+        alias: "test",
+        testClasses: ["PaymentWebhookTest"],
+        returnCoverage: false,
+        classesToCover: []
+    });
+
+    expect(result).toBeDefined();
+    expect(result.content[0].text).toContain("PaymentWebhookTest.testFailure");
+    expect(result.content[0].text).toContain("Assertion Failed");
+});
+
+test("Handle test failure with status 100 with coverage", () => {
+    const testFailureResult = JSON.stringify({
+        status: 100,
+        result: {
+            summary: {
+                outcome: "Failed",
+                testsRan: 1,
+                passing: 0,
+                failing: 1
+            },
+            tests: [{
+                FullName: "PaymentWebhookTest.testFailure",
+                Outcome: "Fail",
+                Message: "System.AssertException: Assertion Failed"
+            }],
+            coverage: {
+                coverage: [
+                    { name: "PaymentWebhook", coveredPercent: 75 },
+                    { name: "OtherClass", coveredPercent: 50 }
+                ]
+            }
+        }
+    });
+
+    mockedAreCriticalCommandsAllowed.mockReturnValue(true);
+    mockedCheckCliInstallation.mockImplementation(() => {});
+    mockedCleanJSONResult.mockImplementation((input) => input);
+    mockedExecuteSync.mockImplementation(() => {
+        const error: any = new Error("Command failed with status 100");
+        error.stdout = testFailureResult;
+        error.stderr = "Warning: @salesforce/cli update available.";
+        error.status = 100;
+        throw error;
+    });
+
+    const result = RunTests.execute({
+        alias: "test",
+        testClasses: ["PaymentWebhookTest"],
+        returnCoverage: true,
+        classesToCover: ["PaymentWebhook"]
+    });
+
+    expect(result).toBeDefined();
+    expect(result.content[0].text).toContain("PaymentWebhook");
+    expect(result.content[0].text).not.toContain("OtherClass");
 });

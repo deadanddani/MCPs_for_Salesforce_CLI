@@ -141,3 +141,41 @@ test("DeployMetadata cli not installed", () => {
     expect(result).toBeDefined();
     expect(result.content[0].text).toContain('Salesforce CLI is not installed.');
 });
+
+test("DeployMetadata handles deployment failure with details", () => {
+    const deployFailureResult = JSON.stringify({
+        status: 1,
+        result: {
+            success: false,
+            details: {
+                componentFailures: [{
+                    componentType: "ApexClass",
+                    fileName: "classes/TestClass.cls",
+                    fullName: "TestClass",
+                    problem: "unexpected token: 'class'",
+                    lineNumber: 1,
+                    columnNumber: 1
+                }]
+            }
+        }
+    });
+
+    mockedAreCriticalCommandsAllowed.mockReturnValue(true);
+    mockedCheckCliInstallation.mockImplementation(() => {});
+    mockedExecuteSync.mockImplementation(() => {
+        const error: any = new Error("Command failed with status 1");
+        error.stdout = deployFailureResult;
+        error.stderr = "";
+        error.status = 1;
+        throw error;
+    });
+
+    const result = DeployMetadata.execute({
+        alias: 'testDev',
+        projectPath: 'C:/testProject/',
+        metadataPath: 'C:/testProject/force-app/main/default/classes/TestClass.cls'
+    });
+
+    expect(result).toBeDefined();
+    expect(result.content[0].text).toContain('TestClass');
+});

@@ -90,6 +90,7 @@ function reduceCoverageData(resultMessage: string, classesToCover: string[]): an
 function isTestExecutionError(error: string): boolean {
   if (typeof error !== "string") return false;
   const errorMessage = cleanJSONResult(error);
+  if (typeof errorMessage !== "string") return false;
   const errorMessageReduced = errorMessage.slice(0, 100);
 
   const match = errorMessageReduced.match(/"status"\s*:\s*100/);
