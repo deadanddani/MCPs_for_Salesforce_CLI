@@ -1,5 +1,5 @@
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { createServer } from "./server/server";
+import { createServer } from "./server/server.js";
 
 const server = createServer();
 

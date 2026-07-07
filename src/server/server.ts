@@ -1,5 +1,5 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { tools } from "../tools/toolsRepository";
+import { tools } from "../tools/toolsRepository.js";
 import type { Tool } from "../entities/Tool.ts";
 
 export const createServer = () => {

@@ -5,7 +5,9 @@ export function executeSync(command: string): string {
     encoding: "utf-8",
     maxBuffer: 5 * 1024 * 1024,
     shell: true,
-    stdio: 'pipe'
+    stdio: 'pipe',
+    // MCP hosts set FORCE_COLOR, making sf wrap its JSON output in ANSI color codes that break JSON.parse
+    env: { ...process.env, FORCE_COLOR: "0", NO_COLOR: "1" }
   });
 
   if(result.status !== 0) {
