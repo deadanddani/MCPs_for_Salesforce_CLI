@@ -35,7 +35,14 @@ cd MCPs_for_Salesforce_CLI
 npm install
 ```
 
-### 3. Configure environment variables
+### 3. Build the server
+```bash
+npm run build
+```
+
+This compiles the server to `build/index.js`, which is the recommended way to run the MCP (see the [Cursor](./CURSOR_SETUP.md) and [VS Code](./VSCODE_SETUP.md) guides). Re-run this command whenever you update the code (e.g. after `git pull`).
+
+### 4. Configure environment variables
 
 Create a `.env` file in the root directory by copying the example:
 ```bash

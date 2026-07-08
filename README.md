@@ -18,10 +18,12 @@ This MCP server provides a comprehensive set of tools that enable AI assistants 
 
 ## 🚀 Quick Start
 
-1. **[Setup Guide](./docs/SETUP.md)** - Install dependencies, Salesforce CLI, and configure environment
+1. **[Setup Guide](./docs/SETUP.md)** - Install dependencies, Salesforce CLI, build the server, and configure environment
 2. **[MCP Tools Testing](./docs/MCP_TOOLS_TESTING.md)** - Test the MCP tools interactively with the MCP Inspector
 3. **[Cursor Setup](./docs/CURSOR_SETUP.md)** - Configure and use in Cursor
 4. **[VS Code Setup](./docs/VSCODE_SETUP.md)** - Configure and use in VS Code (CoPilot)
+
+> ℹ️ **Tip:** Configure your MCP client to run the compiled server (`npm run build` + `node build/index.js`). Running the source directly with `tsx` executes whatever git branch is checked out, so switching branches silently changes the server's behavior — see the troubleshooting section of the setup guides.
 
 ## 📚 Available Tools
 

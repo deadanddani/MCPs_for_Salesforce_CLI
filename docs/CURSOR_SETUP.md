@@ -26,14 +26,14 @@ If the file doesn't exist, create it.
 
 ### 2. Add the MCP Configuration
 
-Add the following entry to the `mcp-tools` section of the configuration file:
+Add the following entry to the `mcp-tools` section of the configuration file. This runs the compiled server, so make sure you have run `npm run build` first (see the [Setup Guide](./SETUP.md)):
 
 ```json
 {
   "mcpServers": {
     "mcp-salesforce-cli": {
-      "command": "npx",
-      "args": ["-y", "tsx", "/ABSOLUTE/PATH/TO/MCPs_for_Salesforce_CLI/src/index.ts"]
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/MCPs_for_Salesforce_CLI/build/index.js"]
     }
   }
 }
@@ -46,8 +46,8 @@ Add the following entry to the `mcp-tools` section of the configuration file:
 {
   "mcpServers": {
     "mcp-salesforce-cli": {
-      "command": "npx",
-      "args": ["-y", "tsx", "/Users/yourname/Documents/MCPs_for_Salesforce_CLI/src/index.ts"]
+      "command": "node",
+      "args": ["/Users/yourname/Documents/MCPs_for_Salesforce_CLI/build/index.js"]
     }
   }
 }
@@ -58,12 +58,29 @@ Add the following entry to the `mcp-tools` section of the configuration file:
 {
   "mcpServers": {
     "mcp-salesforce-cli": {
-      "command": "npx",
-      "args": ["-y", "tsx", "C:\\Users\\yourname\\Documents\\MCPs_for_Salesforce_CLI\\src\\index.ts"]
+      "command": "node",
+      "args": ["C:\\Users\\yourname\\Documents\\MCPs_for_Salesforce_CLI\\build\\index.js"]
     }
   }
 }
 ```
+
+#### Alternative: run from source (development mode)
+
+If you are actively developing the MCP itself, you can run the TypeScript source directly instead:
+
+```json
+{
+  "mcpServers": {
+    "mcp-salesforce-cli": {
+      "command": "npx",
+      "args": ["-y", "tsx", "/ABSOLUTE/PATH/TO/MCPs_for_Salesforce_CLI/src/index.ts"]
+    }
+  }
+}
+```
+
+> ⚠️ **Warning:** In this mode the server executes whatever is checked out in the repository. If you switch to an older git branch, the server silently runs old code — including bugs already fixed on `master`. Prefer the compiled `build/index.js` config unless you are working on the MCP source.
 
 ### 3. Restart Cursor
 
@@ -147,6 +164,13 @@ If you see errors related to environment variables, you can optionally create a 
 2. Check that Salesforce CLI is installed: `sf --version`
 3. Verify your `.env` configuration
 4. Review Cursor's console for error messages
+
+### A Fixed Bug Comes Back / Changes Don't Apply
+
+The client only loads the server code when it starts, so:
+
+1. **After updating the code** (`git pull`), re-run `npm run build` and restart the client (or reconnect the MCP server) to pick up the changes.
+2. **If you run from source with `tsx`** (development mode), remember the server executes the currently checked-out branch. If an already-fixed error reappears (e.g. `SyntaxError: Expected property name or '}' in JSON`), check which branch the repo is on (`git branch --show-current`) and whether it contains master (`git merge-base --is-ancestor origin/master HEAD && echo yes || echo no`). Merge or rebase master into your branch, then restart the server.
 
 ---
 
